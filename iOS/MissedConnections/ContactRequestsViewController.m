@@ -9,6 +9,7 @@
 #import "ContactRequestsViewController.h"
 #import <Parse/Parse.h>
 #import "ContactRequestTableViewCell.h"
+#import "SwipeableViewController.h"
 
 @interface ContactRequestsViewController ()
 
@@ -165,8 +166,10 @@
             otherUser = contactRequest[@"toUser"];
         }
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Phone Number" message:otherUser[@"phoneNumber"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show];
+        SwipeableViewController *tinderCardController = [[SwipeableViewController alloc] init];
+        tinderCardController.profileIDArray = @[otherUser[@"fbid"]];
+        
+        [self presentViewController:tinderCardController animated:YES completion:nil];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
