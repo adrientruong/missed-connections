@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-M7-WQg">
-                                <rect key="frame" x="236" y="506" width="129" height="30"/>
+                                <rect key="frame" x="236" y="371" width="129" height="30"/>
                                 <state key="normal" title="Login to Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,31 +26,11 @@
                                     <action selector="login:" destination="bap-tV-xqP" eventType="touchUpInside" id="9Jj-Dq-snG"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let The Connections Begin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCh-HG-f5z">
-                                <rect key="frame" x="196" y="200" width="208" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fel-dl-72W">
-                                <rect key="frame" x="243" y="117" width="108" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="Gn3-mB-tJS"/>
-                                    <constraint firstAttribute="height" constant="25" id="HdP-eH-KvM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FCh-HG-f5z" firstAttribute="centerX" secondItem="d3r-M7-WQg" secondAttribute="centerX" id="RHU-ph-X4B"/>
-                            <constraint firstItem="Fel-dl-72W" firstAttribute="top" secondItem="OOu-IS-nrn" secondAttribute="bottom" constant="53" id="fwH-8W-HsW"/>
-                            <constraint firstItem="FCh-HG-f5z" firstAttribute="top" secondItem="Fel-dl-72W" secondAttribute="bottom" constant="58" id="hb3-QV-Oc7"/>
-                            <constraint firstItem="yZf-vk-8Pi" firstAttribute="top" secondItem="d3r-M7-WQg" secondAttribute="bottom" constant="64" id="qM6-MM-brs"/>
-                            <constraint firstItem="d3r-M7-WQg" firstAttribute="centerX" secondItem="o0J-rG-BH8" secondAttribute="centerX" id="qMI-YQ-dej"/>
-                            <constraint firstItem="Fel-dl-72W" firstAttribute="leading" secondItem="o0J-rG-BH8" secondAttribute="leading" constant="243" id="vps-DA-A47"/>
+                            <constraint firstItem="yZf-vk-8Pi" firstAttribute="top" secondItem="d3r-M7-WQg" secondAttribute="bottom" constant="199" id="EMy-De-Eas"/>
+                            <constraint firstAttribute="centerX" secondItem="d3r-M7-WQg" secondAttribute="centerX" constant="-0.5" id="nOz-YF-5Zo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="WSK-Sx-Gec"/>
@@ -74,24 +54,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
-                                <rect key="frame" x="8" y="72" width="584" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-ax-y7x">
-                                <rect key="frame" x="239" y="184" width="145" height="30"/>
+                                <rect key="frame" x="238" y="265" width="145" height="30"/>
                                 <state key="normal" title="Verify Phone Number">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="verifyButtonWasTapped" destination="6VE-58-Ugf" eventType="touchUpInside" id="c3B-j6-eY9"/>
-                                    <segue destination="cVv-5u-zdO" kind="presentation" id="cOS-5M-Tzp"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
-                                <rect key="frame" x="8" y="151" width="584" height="41"/>
+                                <rect key="frame" x="23" y="151" width="584" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,16 +69,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="71" id="Erf-uk-sdm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-8" id="HPw-Ys-qxS"/>
-                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" constant="-11.5" id="Hvi-3j-bGT"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="8" id="QLf-hh-txm"/>
+                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="73" id="Erf-uk-sdm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-23" id="HPw-Ys-qxS"/>
+                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" constant="-10.5" id="Hvi-3j-bGT"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="87" id="QLf-hh-txm"/>
                             <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="54" id="cag-6b-gut"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="-8" id="eNT-w9-pVB"/>
-                            <constraint firstItem="ElH-ax-y7x" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leading" constant="238" id="k8m-q0-rnc"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="centerX" secondItem="bpT-Qc-HL3" secondAttribute="centerX" id="nLi-6N-gPQ"/>
-                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="73" id="sWv-ke-F1V"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="87" id="xMf-bh-I8T"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="7" id="fth-94-gq8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -117,31 +83,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="pGx-kT-ssp"/>
-                    <connections>
-                        <segue destination="svT-M8-S05" kind="show" identifier="showLocationPermission" id="6DA-IX-pOo"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhj-K5-L8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1197" y="504"/>
-        </scene>
-        <!--Verify Phone-->
-        <scene sceneID="Kbu-Mg-B1v">
-            <objects>
-                <viewController title="Verify Phone" id="cVv-5u-zdO" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Wz7-Ra-OnK"/>
-                        <viewControllerLayoutGuide type="bottom" id="Iii-7N-SGg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="l7x-nu-c19">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AKo-IA-UCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1956" y="517"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uCF-z1-zF6">
@@ -160,47 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SGW-7T-jdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-288" y="500"/>
-        </scene>
-        <!--Location Permission View Controller-->
-        <scene sceneID="Tl9-Wu-tk9">
-            <objects>
-                <viewController id="svT-M8-S05" customClass="LocationPermissionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0MI-DJ-FZs"/>
-                        <viewControllerLayoutGuide type="bottom" id="EoO-yU-8Ni"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dhc-OO-j1x">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fO8-l4-Yaa">
-                                <rect key="frame" x="223" y="213" width="155" height="30"/>
-                                <state key="normal" title="Allow Location Access">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="allowLocationAccessButtonWasTapped" destination="svT-M8-S05" eventType="touchUpInside" id="EGU-8i-siZ"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To show you people that you may have met, we need your location data. Please give the app permission to access your location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDi-pi-8ZA">
-                                <rect key="frame" x="16" y="72" width="568" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fO8-l4-Yaa" firstAttribute="top" secondItem="rDi-pi-8ZA" secondAttribute="bottom" constant="100" id="0D0-ZG-CzM"/>
-                            <constraint firstItem="rDi-pi-8ZA" firstAttribute="top" secondItem="0MI-DJ-FZs" secondAttribute="bottom" constant="8" id="5wl-cm-3AF"/>
-                            <constraint firstAttribute="centerX" secondItem="fO8-l4-Yaa" secondAttribute="centerX" id="kBn-HH-UY7"/>
-                            <constraint firstItem="rDi-pi-8ZA" firstAttribute="leading" secondItem="Dhc-OO-j1x" secondAttribute="leadingMargin" id="lsZ-pE-re1"/>
-                            <constraint firstItem="rDi-pi-8ZA" firstAttribute="trailing" secondItem="Dhc-OO-j1x" secondAttribute="trailingMargin" id="tA4-2i-dSw"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hj2-sW-zy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
 </document>
