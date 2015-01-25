@@ -117,6 +117,53 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		415BBB011A74D0B600EE6BA2 /* Phone Number Verification */ = {
+			isa = PBXGroup;
+			children = (
+				7A43F9041A74733C00501CC3 /* PhoneNumberVerificationClient.h */,
+				7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */,
+				7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */,
+				7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */,
+			);
+			name = "Phone Number Verification";
+			sourceTree = "<group>";
+		};
+		415BBB021A74D0C700EE6BA2 /* Location Permission */ = {
+			isa = PBXGroup;
+			children = (
+				7ACB1E621A74925E00A54698 /* LocationPermissionViewController.h */,
+				7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */,
+			);
+			name = "Location Permission";
+			sourceTree = "<group>";
+		};
+		415BBB031A74D0D100EE6BA2 /* Location Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7ACB1E681A7496F300A54698 /* LocationController.h */,
+				7ACB1E691A7496F300A54698 /* LocationController.m */,
+			);
+			name = "Location Controller";
+			sourceTree = "<group>";
+		};
+		415BBB041A74D0E300EE6BA2 /* Server Client */ = {
+			isa = PBXGroup;
+			children = (
+				7ACB1E6B1A74989300A54698 /* ServerClient.h */,
+				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
+			);
+			name = "Server Client";
+			sourceTree = "<group>";
+		};
+		415BBB051A74D0EF00EE6BA2 /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03C554141A747F8C00BF76EE /* LoginViewController.h */,
+				03C554151A747F8C00BF76EE /* LoginViewController.m */,
+			);
+			name = "Login View Controller";
+			sourceTree = "<group>";
+		};
 		7A43F8D21A74732200501CC3 = {
 			isa = PBXGroup;
 			children = (
@@ -143,21 +190,14 @@
 			children = (
 				7A43F8E21A74732200501CC3 /* AppDelegate.h */,
 				7A43F8E31A74732200501CC3 /* AppDelegate.m */,
-				7A43F9041A74733C00501CC3 /* PhoneNumberVerificationClient.h */,
-				7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */,
-				7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */,
-				7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */,
-				7ACB1E621A74925E00A54698 /* LocationPermissionViewController.h */,
-				7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */,
-				7ACB1E681A7496F300A54698 /* LocationController.h */,
-				7ACB1E691A7496F300A54698 /* LocationController.m */,
-				7ACB1E6B1A74989300A54698 /* ServerClient.h */,
-				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
-				7A43F8E81A74732200501CC3 /* Main.storyboard */,
-				03C554141A747F8C00BF76EE /* LoginViewController.h */,
-				03C554151A747F8C00BF76EE /* LoginViewController.m */,
+				415BBB011A74D0B600EE6BA2 /* Phone Number Verification */,
+				415BBB021A74D0C700EE6BA2 /* Location Permission */,
+				415BBB031A74D0D100EE6BA2 /* Location Controller */,
+				415BBB041A74D0E300EE6BA2 /* Server Client */,
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
+				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
 				7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */,
+				7A43F8E81A74732200501CC3 /* Main.storyboard */,
 				7A43F8DE1A74732200501CC3 /* Supporting Files */,
 			);
 			path = MissedConnections;
