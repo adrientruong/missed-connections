@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030DCC9C1A74F2150077F826 /* ZLPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCC991A74F2150077F826 /* ZLPanGestureRecognizer.m */; };
+		030DCC9D1A74F2150077F826 /* ZLSwipeableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCC9B1A74F2150077F826 /* ZLSwipeableView.m */; };
+		030DCCA01A74F21F0077F826 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCC9F1A74F21F0077F826 /* SwipeViewController.m */; };
+		030DCCA71A74F25B0077F826 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030DCCA61A74F25B0077F826 /* CardView.xib */; };
+		030DCCAA1A74F2720077F826 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCCA91A74F2720077F826 /* CardView.m */; };
 		03C554161A747F8C00BF76EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C554151A747F8C00BF76EE /* LoginViewController.m */; };
 		03C554181A74844200BF76EE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554171A74844200BF76EE /* ParseFacebookUtils.framework */; };
 		03C5541A1A74844B00BF76EE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554191A74844B00BF76EE /* FacebookSDK.framework */; };
@@ -37,6 +42,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030DCC981A74F2150077F826 /* ZLPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLPanGestureRecognizer.h; sourceTree = "<group>"; };
+		030DCC991A74F2150077F826 /* ZLPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLPanGestureRecognizer.m; sourceTree = "<group>"; };
+		030DCC9A1A74F2150077F826 /* ZLSwipeableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZLSwipeableView.h; sourceTree = "<group>"; };
+		030DCC9B1A74F2150077F826 /* ZLSwipeableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSwipeableView.m; sourceTree = "<group>"; };
+		030DCC9E1A74F21F0077F826 /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		030DCC9F1A74F21F0077F826 /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		030DCCA61A74F25B0077F826 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		030DCCA81A74F2720077F826 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		030DCCA91A74F2720077F826 /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		03C554141A747F8C00BF76EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		03C554151A747F8C00BF76EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		03C554171A74844200BF76EE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -106,6 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		030DCC971A74F2150077F826 /* ZLSwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				030DCC981A74F2150077F826 /* ZLPanGestureRecognizer.h */,
+				030DCC991A74F2150077F826 /* ZLPanGestureRecognizer.m */,
+				030DCC9A1A74F2150077F826 /* ZLSwipeableView.h */,
+				030DCC9B1A74F2150077F826 /* ZLSwipeableView.m */,
+			);
+			path = ZLSwipeableView;
+			sourceTree = "<group>";
+		};
 		066D13D7E8BE9BEE6C835150 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +173,11 @@
 		7A43F8DD1A74732200501CC3 /* MissedConnections */ = {
 			isa = PBXGroup;
 			children = (
+				030DCC971A74F2150077F826 /* ZLSwipeableView */,
 				7A43F8E21A74732200501CC3 /* AppDelegate.h */,
 				7A43F8E31A74732200501CC3 /* AppDelegate.m */,
+				030DCC9E1A74F21F0077F826 /* SwipeViewController.h */,
+				030DCC9F1A74F21F0077F826 /* SwipeViewController.m */,
 				7A43F9041A74733C00501CC3 /* PhoneNumberVerificationClient.h */,
 				7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */,
 				7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */,
@@ -160,6 +188,9 @@
 				7ACB1E691A7496F300A54698 /* LocationController.m */,
 				7ACB1E6B1A74989300A54698 /* ServerClient.h */,
 				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
+				030DCCA81A74F2720077F826 /* CardView.h */,
+				030DCCA91A74F2720077F826 /* CardView.m */,
+				030DCCA61A74F25B0077F826 /* CardView.xib */,
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
 				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
 				7A014E451A74DF740012FADA /* Main.storyboard */,
@@ -265,6 +296,7 @@
 			files = (
 				7A43F8EC1A74732200501CC3 /* Images.xcassets in Resources */,
 				7A014E461A74DF740012FADA /* Main.storyboard in Resources */,
+				030DCCA71A74F25B0077F826 /* CardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,11 +342,15 @@
 			files = (
 				7A43F8E41A74732200501CC3 /* AppDelegate.m in Sources */,
 				7A43F8E11A74732200501CC3 /* main.m in Sources */,
+				030DCC9C1A74F2150077F826 /* ZLPanGestureRecognizer.m in Sources */,
 				7A43F9081A74733C00501CC3 /* PhoneNumberVerificationClient.m in Sources */,
 				7A43F9091A74733C00501CC3 /* PhoneNumberVerificationViewController.m in Sources */,
 				7ACB1E641A74925E00A54698 /* LocationPermissionViewController.m in Sources */,
+				030DCCAA1A74F2720077F826 /* CardView.m in Sources */,
 				7ACB1E6A1A7496F300A54698 /* LocationController.m in Sources */,
+				030DCC9D1A74F2150077F826 /* ZLSwipeableView.m in Sources */,
 				03C554161A747F8C00BF76EE /* LoginViewController.m in Sources */,
+				030DCCA01A74F21F0077F826 /* SwipeViewController.m in Sources */,
 				7ACB1E6D1A74989300A54698 /* ServerClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
