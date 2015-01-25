@@ -7,9 +7,14 @@
 //
 
 #import "MainViewController.h"
+#import "SwipeableViewController.h"
 #import <Parse/Parse.h>
 
 @interface MainViewController () <MKMapViewDelegate>
+
+@property (strong, nonatomic) NSMutableArray *peopleLocationArray;
+@property (nonatomic) NSInteger indexTag;
+@property (strong, nonatomic) NSArray *selectedPeopleArray;
 
 @end
 
@@ -20,6 +25,8 @@
     // Do any additional setup after loading the view.
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+    self.peopleLocationArray = [[NSMutableArray alloc] init];
+    self.selectedPeopleArray = [[NSArray alloc] init];
     NSString *url = [NSString stringWithFormat:@"https://fierce-wildwood-9429.herokuapp.com/history?uid=%@", [[PFUser currentUser] objectForKey:@"fbid"]];
     NSLog(@"current id %@", [[PFUser currentUser] objectForKey:@"fbid"]);
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -32,11 +39,17 @@
             if(!jsonError && jsonResponse)
             {
                 NSArray *annotationLocation = jsonResponse[@"clusters"];
-                for(NSDictionary *annotation in annotationLocation)
+                for(int i=0; i<annotationLocation.count; i++)
                 {
+                    NSDictionary *annotation = annotationLocation[i];
                     CGPoint point = CGPointMake([annotation[@"coordinates"][@"x"] floatValue], [annotation[@"coordinates"][@"y"] floatValue]);
                     NSLog(@"coordinate point %f %f", point.x, point.y);
-                    [self addAnnotationAtPoint:point];
+                    self.indexTag = i;
+                    [self.peopleLocationArray addObject:annotation[@"users"]];
+                    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.x, point.y);
+                    MKPointAnnotation *pointAnnotation = [[MKPointAnnotation alloc] init];
+                    pointAnnotation.coordinate = coord;
+                    [self.mapView addAnnotation:pointAnnotation];
                 }
             }
         }
@@ -47,13 +60,9 @@
      }];
 }
 
-- (void) addAnnotationAtPoint: (CGPoint) point
+- (void) viewDidAppear:(BOOL)animated
 {
-    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.x, point.y);
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.coordinate = coord;
-    NSLog(@"annotation %@", annotation);
-    [self.mapView addAnnotation:annotation];
+    self.selectedPeopleArray = [[NSArray alloc] init];
 }
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -65,8 +74,10 @@
                          initWithAnnotation:annotation reuseIdentifier:@"Custom Identifier"];
         customPinView.pinColor = MKPinAnnotationColorRed;
         customPinView.animatesDrop = YES;
-        customPinView.canShowCallout = YES;
+        customPinView.tag = self.indexTag;
         //customPinView.image = custom annotation view image
+        
+        [self performSegueWithIdentifier:@"showTinder" sender:self];
         
     }
     return customPinView;
@@ -77,11 +88,23 @@
     
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"showTinder"])
+    {
+        SwipeableViewController *swipeableView = (SwipeableViewController *) segue.destinationViewController;
+        swipeableView.profileIDArray = [NSArray arrayWithArray:self.selectedPeopleArray];
+    }
+}
+
 #pragma mark - Map view delegate
 
 - (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     //Open Tinder View
+    NSLog(@"Annotation selected = %li", (long)view.tag);
+    NSLog(@"Selected users %@", [self.peopleLocationArray objectAtIndex:view.tag]);
+    self.selectedPeopleArray = [NSArray arrayWithArray:[self.peopleLocationArray objectAtIndex:view.tag]];
 }
 
 - (void)didReceiveMemoryWarning {

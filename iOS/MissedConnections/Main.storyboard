@@ -36,7 +36,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-Wt-fzi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R68-Jo-C3I">
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R68-Jo-C3I">
                                 <rect key="frame" x="0.0" y="561" width="600" height="39"/>
                                 <color key="backgroundColor" red="1" green="0.49399121229999998" blue="0.3397066856" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -70,11 +70,30 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="oS1-Wt-fzi" id="sMI-RH-1vR"/>
+                        <segue destination="Q9u-F7-9BP" kind="show" identifier="showTinder" id="snL-ab-gLn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-rt-Mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="-638"/>
+            <point key="canvasLocation" x="844" y="-638"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="he6-JG-C2s">
+            <objects>
+                <viewController id="Q9u-F7-9BP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ny-fU-zCH"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTi-qC-c5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i87-re-N24">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2F-09-Jqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-638"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YtD-q6-2kS">

@@ -14,6 +14,7 @@
 		030DCCAA1A74F2720077F826 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCCA91A74F2720077F826 /* CardView.m */; };
 		030DCCAD1A74FB5B0077F826 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCCAC1A74FB5B0077F826 /* MainViewController.m */; };
 		030DCCAF1A74FBB20077F826 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030DCCAE1A74FBB20077F826 /* MapKit.framework */; };
+		030DCCB21A751E6C0077F826 /* SwipeableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCCB11A751E6C0077F826 /* SwipeableViewController.m */; };
 		03C554161A747F8C00BF76EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C554151A747F8C00BF76EE /* LoginViewController.m */; };
 		03C554181A74844200BF76EE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554171A74844200BF76EE /* ParseFacebookUtils.framework */; };
 		03C5541A1A74844B00BF76EE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554191A74844B00BF76EE /* FacebookSDK.framework */; };
@@ -56,6 +57,8 @@
 		030DCCAB1A74FB5B0077F826 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		030DCCAC1A74FB5B0077F826 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		030DCCAE1A74FBB20077F826 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		030DCCB01A751E6C0077F826 /* SwipeableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableViewController.h; sourceTree = "<group>"; };
+		030DCCB11A751E6C0077F826 /* SwipeableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableViewController.m; sourceTree = "<group>"; };
 		03C554141A747F8C00BF76EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		03C554151A747F8C00BF76EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		03C554171A74844200BF76EE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				7ACB1E691A7496F300A54698 /* LocationController.m */,
 				030DCCAB1A74FB5B0077F826 /* MainViewController.h */,
 				030DCCAC1A74FB5B0077F826 /* MainViewController.m */,
+				030DCCB01A751E6C0077F826 /* SwipeableViewController.h */,
+				030DCCB11A751E6C0077F826 /* SwipeableViewController.m */,
 				7ACB1E6B1A74989300A54698 /* ServerClient.h */,
 				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
 				030DCCA81A74F2720077F826 /* CardView.h */,
@@ -352,6 +357,7 @@
 				7A43F8E41A74732200501CC3 /* AppDelegate.m in Sources */,
 				7A43F8E11A74732200501CC3 /* main.m in Sources */,
 				030DCC9C1A74F2150077F826 /* ZLPanGestureRecognizer.m in Sources */,
+				030DCCB21A751E6C0077F826 /* SwipeableViewController.m in Sources */,
 				7A43F9081A74733C00501CC3 /* PhoneNumberVerificationClient.m in Sources */,
 				030DCCAD1A74FB5B0077F826 /* MainViewController.m in Sources */,
 				7A43F9091A74733C00501CC3 /* PhoneNumberVerificationViewController.m in Sources */,
