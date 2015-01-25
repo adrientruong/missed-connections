@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Dto-0e-zZk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
+        <scene sceneID="oM3-yX-yF8">
+            <objects>
+                <viewController id="bap-tV-xqP" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OOu-IS-nrn"/>
+                        <viewControllerLayoutGuide type="bottom" id="yZf-vk-8Pi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o0J-rG-BH8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-M7-WQg">
+                                <rect key="frame" x="236" y="371" width="129" height="30"/>
+                                <state key="normal" title="Login to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="login:" destination="bap-tV-xqP" eventType="touchUpInside" id="9Jj-Dq-snG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yZf-vk-8Pi" firstAttribute="top" secondItem="d3r-M7-WQg" secondAttribute="bottom" constant="199" id="EMy-De-Eas"/>
+                            <constraint firstAttribute="centerX" secondItem="d3r-M7-WQg" secondAttribute="centerX" constant="-0.5" id="nOz-YF-5Zo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="WSK-Sx-Gec"/>
+                    <connections>
+                        <segue destination="6VE-58-Ugf" kind="show" identifier="loggedIn" id="SiR-sq-mn2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zS4-W5-C5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="500"/>
+        </scene>
+        <!--Phone Number Verification View Controller-->
         <scene sceneID="Sqt-AC-RBQ">
             <objects>
-                <viewController id="6VE-58-Ugf" sceneMemberID="viewController">
+                <viewController id="6VE-58-Ugf" customClass="PhoneNumberVerificationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4bR-ic-fDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Kdj-uJ-dmQ"/>
@@ -17,27 +54,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
-                                <rect key="frame" x="8" y="40" width="584" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-ax-y7x">
-                                <rect key="frame" x="228" y="126" width="145" height="30"/>
+                                <rect key="frame" x="238" y="265" width="145" height="30"/>
                                 <state key="normal" title="Verify Phone Number">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
+                                <rect key="frame" x="23" y="151" width="584" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" id="Hvi-3j-bGT"/>
-                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="45" id="VA8-U0-diU"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="-8" id="WC1-Er-IzN"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="20" id="baj-lw-3cR"/>
+                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="73" id="Erf-uk-sdm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-23" id="HPw-Ys-qxS"/>
+                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" constant="-10.5" id="Hvi-3j-bGT"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="87" id="QLf-hh-txm"/>
                             <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="54" id="cag-6b-gut"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-8" id="jYa-zN-Och"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="7" id="fth-94-gq8"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -45,10 +82,29 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="pGx-kT-ssp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uhj-K5-L8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="504"/>
+            <point key="canvasLocation" x="1197" y="504"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uCF-z1-zF6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dto-0e-zZk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LDs-hI-DsV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bap-tV-xqP" kind="relationship" relationship="rootViewController" id="LXM-Kb-mTR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SGW-7T-jdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-288" y="500"/>
         </scene>
     </scenes>
 </document>
