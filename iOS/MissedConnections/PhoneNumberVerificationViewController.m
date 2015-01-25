@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "PhoneNumberVerificationClient.h"
 #import "LocationPermissionViewController.h"
+#import <Parse/Parse.h>
 
 @interface PhoneNumberVerificationViewController () <MFMessageComposeViewControllerDelegate>
 
@@ -61,6 +62,10 @@
         PhoneNumberVerificationClient *client = [PhoneNumberVerificationClient sharedClient];
         [client verifyWithIdentifier:self.verificationCode completionHandler:^(NSString *phoneNumber) {
             if ([phoneNumber length] > 0) {
+                PFUser *user = [PFUser currentUser];
+                [user setObject:phoneNumber forKey:@"phoneNumber"];
+                [user saveEventually];
+                
                 [self performSegueWithIdentifier:@"showLocationPermission" sender:self];
             } else {
                 NSLog(@"DARN!");
