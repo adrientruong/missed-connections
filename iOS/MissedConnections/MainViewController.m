@@ -28,9 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
     self.peopleLocationArray = [[NSMutableArray alloc] init];
     self.selectedPeopleArray = [[NSArray alloc] init];
+    self.dateButton.backgroundColor = [UIColor colorWithRed:231.0f/255.0f green:76.0f/255.0f blue:60.0f/255.0f alpha:1.0000];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -102,13 +102,11 @@
 
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    MKPinAnnotationView *customPinView = nil;
+    MKAnnotationView *customPinView = nil;
     if(annotation!= mapView.userLocation)
     {
-        customPinView = [[MKPinAnnotationView alloc]
+        customPinView = [[MKAnnotationView alloc]
                          initWithAnnotation:annotation reuseIdentifier:@"Custom Identifier"];
-        customPinView.pinColor = MKPinAnnotationColorRed;
-        customPinView.animatesDrop = YES;
         customPinView.tag = self.indexTag;
         [customPinView setSelected:NO animated:YES];
         customPinView.image = [UIImage imageNamed:@"annotation"];
