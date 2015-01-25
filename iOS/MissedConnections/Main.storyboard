@@ -19,6 +19,85 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZb-dS-LH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-1040" y="-340"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="rQ8-kb-8Fw">
+            <objects>
+                <viewController storyboardIdentifier="mainView" id="ZyZ-Wv-G8z" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y8T-iR-AKN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q7K-md-7p8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0EU-ja-KgM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="oS1-Wt-fzi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R68-Jo-C3I">
+                                <rect key="frame" x="0.0" y="561" width="600" height="39"/>
+                                <color key="backgroundColor" red="1" green="0.49399121229999998" blue="0.3397066856" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Cef-eB-za6"/>
+                                </constraints>
+                                <state key="normal" title="24th January 2015">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleDatePicker:" destination="ZyZ-Wv-G8z" eventType="touchUpInside" id="Ce8-Lm-RgM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oS1-Wt-fzi" firstAttribute="bottom" secondItem="Q7K-md-7p8" secondAttribute="top" id="7Nb-m4-Ekn"/>
+                            <constraint firstItem="R68-Jo-C3I" firstAttribute="trailing" secondItem="oS1-Wt-fzi" secondAttribute="trailing" id="7Ta-1z-ash"/>
+                            <constraint firstItem="R68-Jo-C3I" firstAttribute="leading" secondItem="oS1-Wt-fzi" secondAttribute="leading" id="MXm-1U-uRD"/>
+                            <constraint firstItem="oS1-Wt-fzi" firstAttribute="leading" secondItem="0EU-ja-KgM" secondAttribute="leading" id="NkM-Jv-96v"/>
+                            <constraint firstItem="R68-Jo-C3I" firstAttribute="top" secondItem="Y8T-iR-AKN" secondAttribute="bottom" constant="541" id="oJI-L1-0G6"/>
+                            <constraint firstAttribute="trailing" secondItem="oS1-Wt-fzi" secondAttribute="trailing" id="pPD-Tc-kR1"/>
+                            <constraint firstItem="oS1-Wt-fzi" firstAttribute="top" secondItem="0EU-ja-KgM" secondAttribute="top" id="puF-np-FWX"/>
+                            <constraint firstItem="R68-Jo-C3I" firstAttribute="bottom" secondItem="Q7K-md-7p8" secondAttribute="top" id="tz5-oQ-279"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oJI-L1-0G6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="oS1-Wt-fzi" id="sMI-RH-1vR"/>
+                        <segue destination="Q9u-F7-9BP" kind="show" identifier="showTinder" id="snL-ab-gLn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-rt-Mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+<<<<<<< HEAD
+            <point key="canvasLocation" x="844" y="-638"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="he6-JG-C2s">
+            <objects>
+                <viewController id="Q9u-F7-9BP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ny-fU-zCH"/>
+                        <viewControllerLayoutGuide type="bottom" id="CTi-qC-c5b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i87-re-N24">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2F-09-Jqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="-638"/>
+=======
+            <point key="canvasLocation" x="1190" y="-628"/>
+>>>>>>> FETCH_HEAD
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YtD-q6-2kS">
@@ -71,11 +150,13 @@
                     <connections>
                         <outlet property="signInButton" destination="9dw-Jy-dIQ" id="Ed6-a4-Lex"/>
                         <segue destination="4uW-1Z-dem" kind="show" identifier="loggedIn" id="Ush-dY-K83"/>
+                        <segue destination="ZyZ-Wv-G8z" kind="show" identifier="showMain" id="Dgb-TG-HMj"/>
+                        <segue destination="Rfg-n8-w3X" kind="show" identifier="showLocation" id="cB9-2H-yDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xn-IF-TZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353" y="498"/>
+            <point key="canvasLocation" x="-181" y="-345"/>
         </scene>
         <!--Phone Number Verification View Controller-->
         <scene sceneID="VYh-Sj-6iS">
@@ -133,10 +214,12 @@
                         <outlet property="stepTwolabel" destination="Y6q-gq-j8V" id="yaa-t0-35X"/>
                         <outlet property="verifyButton" destination="KGp-qw-NRl" id="asi-cJ-rAs"/>
                         <segue destination="Rfg-n8-w3X" kind="show" identifier="showLocationPermission" id="ein-nS-YrM"/>
+                        <segue destination="ZyZ-Wv-G8z" kind="show" identifier="showMain" id="Yy8-Yx-skx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rQE-lu-NvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-296" y="581"/>
         </scene>
         <!--Location Permission View Controller-->
         <scene sceneID="oL1-8G-V1m">
@@ -199,13 +282,19 @@
                     </view>
                     <connections>
                         <outlet property="giveLocationAccessButton" destination="0bA-Bc-lVI" id="D3C-mT-UfX"/>
+                        <segue destination="ZyZ-Wv-G8z" kind="show" identifier="showMain" id="Kwr-ik-oCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LZ-X6-gCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="628" y="849"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="576" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="cB9-2H-yDH"/>
+        <segue reference="Kwr-ik-oCM"/>
+    </inferredMetricsTieBreakers>
 </document>

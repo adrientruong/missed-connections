@@ -75,7 +75,6 @@
     // Send push notification to query
     [PFPush sendPushMessageToQueryInBackground:pushQuery
                                    withMessage:message];
-
 }
 
 @end
