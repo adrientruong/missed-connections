@@ -47,6 +47,7 @@
                     self.indexTag = i;
                     [self.peopleLocationArray addObject:annotation[@"users"]];
                     CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(point.x, point.y);
+                    [self getLocationNameForCoordinates:coord];
                     MKPointAnnotation *pointAnnotation = [[MKPointAnnotation alloc] init];
                     pointAnnotation.coordinate = coord;
                     [self.mapView addAnnotation:pointAnnotation];
@@ -65,6 +66,22 @@
     self.selectedPeopleArray = [[NSArray alloc] init];
 }
 
+- (void) getLocationNameForCoordinates: (CLLocationCoordinate2D) coord
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/search?ll=%f,%f&oauth_token=CL4IQQRNBM1TA2PQ5ZQEECWXVPQNXHRFON1IVSAGA3XEQWZB&v=20150125",coord.latitude, coord.longitude]];
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:url] queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+    {
+       if(!error)
+       {
+           NSError *error = nil;
+           NSDictionary *response = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+           NSString *name = response[@"response"][@"venues"][0][@"name"];
+           NSLog(@"Name %@", name);
+       }
+    }];
+}
+
 - (MKAnnotationView *) mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     MKPinAnnotationView *customPinView = nil;
@@ -75,10 +92,8 @@
         customPinView.pinColor = MKPinAnnotationColorRed;
         customPinView.animatesDrop = YES;
         customPinView.tag = self.indexTag;
-        //customPinView.image = custom annotation view image
-        
-        [self performSegueWithIdentifier:@"showTinder" sender:self];
-        
+        [customPinView setSelected:NO animated:YES];
+        customPinView.image = [UIImage imageNamed:@"annotation"];
     }
     return customPinView;
 }
@@ -102,9 +117,12 @@
 - (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
     //Open Tinder View
+    if(view.annotation!=self.mapView.userLocation) {
     NSLog(@"Annotation selected = %li", (long)view.tag);
     NSLog(@"Selected users %@", [self.peopleLocationArray objectAtIndex:view.tag]);
     self.selectedPeopleArray = [NSArray arrayWithArray:[self.peopleLocationArray objectAtIndex:view.tag]];
+    [self performSegueWithIdentifier:@"showTinder" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
