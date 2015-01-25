@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="844" y="-638"/>
         </scene>
-        <!--View Controller-->
+        <!--Swipeable View Controller-->
         <scene sceneID="he6-JG-C2s">
             <objects>
-                <viewController id="Q9u-F7-9BP" sceneMemberID="viewController">
+                <viewController id="Q9u-F7-9BP" customClass="SwipeableViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7ny-fU-zCH"/>
                         <viewControllerLayoutGuide type="bottom" id="CTi-qC-c5b"/>
@@ -111,23 +111,29 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dw-Jy-dIQ">
-                                <rect key="frame" x="193" y="481" width="214" height="42"/>
+                                <rect key="frame" x="0.0" y="543" width="600" height="57"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="nbg-zX-tgQ"/>
-                                    <constraint firstAttribute="height" constant="42" id="wDL-GJ-wK5"/>
+                                    <constraint firstAttribute="width" constant="600" id="nbg-zX-tgQ"/>
+                                    <constraint firstAttribute="height" constant="57" id="wDL-GJ-wK5"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Sign in with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="login:" destination="53w-CN-StO" eventType="touchUpInside" id="Vsn-zY-1Jp"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Urt-nr-RNj">
+                                <rect key="frame" x="180" y="121" width="240" height="181"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9dw-Jy-dIQ" firstAttribute="top" secondItem="EMg-fs-NRv" secondAttribute="bottom" constant="-119" id="2xw-7H-eZ0"/>
-                            <constraint firstItem="kj4-dS-Wir" firstAttribute="top" secondItem="9dw-Jy-dIQ" secondAttribute="bottom" constant="77" id="36d-OE-rGc"/>
+                            <constraint firstItem="kj4-dS-Wir" firstAttribute="top" secondItem="9dw-Jy-dIQ" secondAttribute="bottom" id="36d-OE-rGc"/>
                             <constraint firstItem="EMg-fs-NRv" firstAttribute="leading" secondItem="Cne-BX-LfZ" secondAttribute="leading" id="7CE-a2-Zo8"/>
                             <constraint firstItem="EMg-fs-NRv" firstAttribute="top" secondItem="Cne-BX-LfZ" secondAttribute="top" id="C9B-Qc-UzE"/>
                             <constraint firstItem="EMg-fs-NRv" firstAttribute="bottom" secondItem="kj4-dS-Wir" secondAttribute="top" id="JaD-ax-UGr"/>
@@ -290,7 +296,7 @@
         <image name="background" width="576" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Dgb-TG-HMj"/>
         <segue reference="cB9-2H-yDH"/>
-        <segue reference="Kwr-ik-oCM"/>
     </inferredMetricsTieBreakers>
 </document>

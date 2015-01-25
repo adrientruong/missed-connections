@@ -16,10 +16,7 @@
     self = [super initWithFrame:frame];
     if(self)
     {
-        self.layer.cornerRadius = 5.0f;
-        self.layer.masksToBounds = YES;
-        self.layer.shadowRadius = 2.0f;
-        self.layer.shadowColor = [UIColor grayColor].CGColor;
+       
     }
     
     return self;
@@ -27,6 +24,11 @@
 
 - (void) populateCardWithProfile: (NSDictionary *) profileInfo
 {
+    self.layer.cornerRadius = 5.0f;
+    self.layer.masksToBounds = YES;
+    self.layer.shadowRadius = 2.0f;
+    self.layer.shadowColor = [UIColor grayColor].CGColor;
+    
     NSMutableArray *names = [[NSMutableArray alloc] init];
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
     [query whereKey:@"fbid" equalTo:profileInfo[@"_id"]];
