@@ -15,6 +15,11 @@
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2;
     self.profileImageView.layer.masksToBounds = YES;
+    
+    self.backgroundColor = [UIColor clearColor];
+    self.contentView.backgroundColor = [UIColor clearColor];
+    
+    self.nameLabel.textColor = [UIColor whiteColor];
 }
 
 @end

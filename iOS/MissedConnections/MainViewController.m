@@ -18,6 +18,9 @@
 @property (nonatomic) NSInteger indexTag;
 @property (strong, nonatomic) NSArray *selectedPeopleArray;
 
+@property (nonatomic, strong) ContactRequestsViewController *contactRequestsViewController;
+@property (nonatomic, strong) NSArray *constraintsToRemove;
+
 - (IBAction)contactsButtonTapped:(id)sender;
 
 @end
@@ -123,8 +126,45 @@
 
 - (IBAction)contactsButtonTapped:(id)sender
 {
-    ContactRequestsViewController *contactRequestsViewController = [[ContactRequestsViewController alloc] initWithStyle:UITableViewStylePlain];
-    [self presentViewController:contactRequestsViewController animated:YES completion:nil];
+    if (!self.contactRequestsViewController) {
+        self.contactRequestsViewController = [[ContactRequestsViewController alloc] initWithStyle:UITableViewStylePlain];
+        [self addChildViewController:self.contactRequestsViewController];
+        
+        UIView *tableView = self.contactRequestsViewController.view;
+        tableView.translatesAutoresizingMaskIntoConstraints = NO;
+        NSDictionary *views = NSDictionaryOfVariableBindings(tableView);
+        [self.view addSubview:tableView];
+        
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[tableView]|" options:0 metrics:nil views:views]];
+        [self.view addConstraint:constraint];
+        
+        [self.view layoutIfNeeded];
+        
+        [self.view removeConstraint:constraint];
+        
+        self.constraintsToRemove = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[tableView]|" options:0 metrics:nil views:views];
+        [self.view addConstraints:self.constraintsToRemove];
+        
+        [UIView animateWithDuration:0.30 animations:^{
+            [self.view layoutIfNeeded];
+        }];
+        
+        [self.contactRequestsViewController didMoveToParentViewController:self];
+    } else {
+        [self.view removeConstraints:self.constraintsToRemove];
+        
+        UIView *tableView = self.contactRequestsViewController.view;
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
+        [self.view addConstraint:constraint];
+        
+        [UIView animateWithDuration:0.30 animations:^{
+            [self.view layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            [self.contactRequestsViewController removeFromParentViewController];
+            self.contactRequestsViewController = nil;
+        }];
+    }
 }
 
 #pragma mark - Map view delegate
