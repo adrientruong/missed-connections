@@ -24,6 +24,19 @@
     return sharedClient;
 }
 
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration
+{
+    self = [super initWithBaseURL:url sessionConfiguration:configuration];
+    
+    if (!self) {
+        return nil;
+    }
+    
+    self.requestSerializer = [AFJSONRequestSerializer serializer];
+    
+    return self;
+}
+
 - (void)postLocationUpdate:(CLLocation *)location forFacebookUserID:(NSString *)facebookUserID
 {
     NSNumber *latitude = @(location.coordinate.latitude);
@@ -36,9 +49,8 @@
                                  @"timestamp": timestamp};
     
     [self POST:@"location" parameters:parameters success:^(NSURLSessionDataTask *task, id response) {
-        
     } failure: ^(NSURLSessionDataTask *task, NSError *error) {
-        
+        NSLog(@"Error posting location data:%@", error);
     }];
 }
 
