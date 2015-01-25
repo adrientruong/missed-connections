@@ -167,11 +167,8 @@
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
 				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
 				7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */,
-<<<<<<< HEAD
 				1C5410251A74D8D300F2AF41 /* Images-2.xcassets */,
-=======
 				7A43F8E81A74732200501CC3 /* Main.storyboard */,
->>>>>>> FETCH_HEAD
 				7A43F8DE1A74732200501CC3 /* Supporting Files */,
 			);
 			path = MissedConnections;
