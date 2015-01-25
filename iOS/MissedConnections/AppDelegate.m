@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "LocationController.h"
 
 @interface AppDelegate ()
 
@@ -20,8 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Parse setApplicationId:@"XUpDAVEYCleovR0qxxifa14OEOqymXR0Flw62JJj" clientKey:@"oCQBCxw8TfAL18a7zs0dEI2oHbKaL1U55iImLuS7"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    [LocationController sharedController];
     
     return YES;
 }
@@ -44,6 +48,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     return [FBAppCall handleOpenURL:url
                   sourceApplication:sourceApplication
                         withSession:[PFFacebookUtils session]];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    return [FBSession.activeSession handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

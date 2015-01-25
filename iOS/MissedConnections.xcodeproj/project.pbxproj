@@ -33,6 +33,9 @@
 		7A43F8EF1A74732200501CC3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */; };
 		7A43F9081A74733C00501CC3 /* PhoneNumberVerificationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */; };
 		7A43F9091A74733C00501CC3 /* PhoneNumberVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */; };
+		7ACB1E641A74925E00A54698 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */; };
+		7ACB1E6A1A7496F300A54698 /* LocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB1E691A7496F300A54698 /* LocationController.m */; };
+		7ACB1E6D1A74989300A54698 /* ServerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB1E6C1A74989300A54698 /* ServerClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,12 @@
 		7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberVerificationClient.m; sourceTree = "<group>"; };
 		7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberVerificationViewController.h; sourceTree = "<group>"; };
 		7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberVerificationViewController.m; sourceTree = "<group>"; };
+		7ACB1E621A74925E00A54698 /* LocationPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPermissionViewController.h; sourceTree = "<group>"; };
+		7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPermissionViewController.m; sourceTree = "<group>"; };
+		7ACB1E681A7496F300A54698 /* LocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationController.h; sourceTree = "<group>"; };
+		7ACB1E691A7496F300A54698 /* LocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationController.m; sourceTree = "<group>"; };
+		7ACB1E6B1A74989300A54698 /* ServerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerClient.h; sourceTree = "<group>"; };
+		7ACB1E6C1A74989300A54698 /* ServerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +87,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C554321A74866C00BF76EE /* CoreLocation.framework in Frameworks */,
 				03C554381A7486CD00BF76EE /* libsqlite3.dylib in Frameworks */,
 				03C554361A7486B600BF76EE /* libz.dylib in Frameworks */,
 				03C554341A74867100BF76EE /* CoreGraphics.framework in Frameworks */,
-				03C554321A74866C00BF76EE /* CoreLocation.framework in Frameworks */,
 				03C554301A74865D00BF76EE /* StoreKit.framework in Frameworks */,
 				03C5542C1A7485E600BF76EE /* QuartzCore.framework in Frameworks */,
 				03C5542A1A7485D500BF76EE /* CoreData.framework in Frameworks */,
@@ -108,6 +117,15 @@
 				2A1DA86A4B7F3153A2B32059 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		415BBB051A74D0EF00EE6BA2 /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03C554141A747F8C00BF76EE /* LoginViewController.h */,
+				03C554151A747F8C00BF76EE /* LoginViewController.m */,
+			);
+			name = "Login View Controller";
 			sourceTree = "<group>";
 		};
 		7A43F8D21A74732200501CC3 = {
@@ -140,12 +158,20 @@
 				7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */,
 				7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */,
 				7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */,
-				7A43F8E81A74732200501CC3 /* Main.storyboard */,
-				03C554141A747F8C00BF76EE /* LoginViewController.h */,
-				03C554151A747F8C00BF76EE /* LoginViewController.m */,
+				7ACB1E621A74925E00A54698 /* LocationPermissionViewController.h */,
+				7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */,
+				7ACB1E681A7496F300A54698 /* LocationController.h */,
+				7ACB1E691A7496F300A54698 /* LocationController.m */,
+				7ACB1E6B1A74989300A54698 /* ServerClient.h */,
+				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
+				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
 				7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */,
+<<<<<<< HEAD
 				1C5410251A74D8D300F2AF41 /* Images-2.xcassets */,
+=======
+				7A43F8E81A74732200501CC3 /* Main.storyboard */,
+>>>>>>> FETCH_HEAD
 				7A43F8DE1A74732200501CC3 /* Supporting Files */,
 			);
 			path = MissedConnections;
@@ -215,7 +241,11 @@
 				TargetAttributes = {
 					7A43F8DA1A74732200501CC3 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = Z5AR6RGC9X;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -293,7 +323,10 @@
 				7A43F8E11A74732200501CC3 /* main.m in Sources */,
 				7A43F9081A74733C00501CC3 /* PhoneNumberVerificationClient.m in Sources */,
 				7A43F9091A74733C00501CC3 /* PhoneNumberVerificationViewController.m in Sources */,
+				7ACB1E641A74925E00A54698 /* LocationPermissionViewController.m in Sources */,
+				7ACB1E6A1A7496F300A54698 /* LocationController.m in Sources */,
 				03C554161A747F8C00BF76EE /* LoginViewController.m in Sources */,
+				7ACB1E6D1A74989300A54698 /* ServerClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +386,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -388,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
