@@ -27,6 +27,10 @@
     
     [LocationController sharedController];
     
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor colorWithRed:227.0f/255.0f green:227.0f/255.0f blue:218.0f/255.0f alpha:1.0000]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:20], NSForegroundColorAttributeName : [UIColor blackColor]}];
+    
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"verifiedNumber"];
     
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];

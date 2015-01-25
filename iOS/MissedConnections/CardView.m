@@ -51,9 +51,9 @@
 
 - (IBAction)sendFriendRequest:(id)sender
 {
-    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:[NSString stringWithFormat:@"fb-messenger://user/%d", [self.userProfile[@"fbid"] intValue]]]])
+    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:[NSString stringWithFormat:@"fb-messenger://user/%@", self.userProfile[@"fbid"]]]])
     {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"fb-messenger://user/%d", [self.userProfile[@"fbid"] intValue]]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"fb-messenger://user/%@", self.userProfile[@"fbid"]]]];
     }
 }
 
