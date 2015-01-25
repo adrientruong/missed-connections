@@ -16,6 +16,8 @@
 - (IBAction)verifyButtonWasTapped;
 
 @property (nonatomic, strong) NSString *verificationCode;
+@property (nonatomic, weak) IBOutlet UILabel *stepTwolabel;
+@property (nonatomic, weak) IBOutlet UIButton *verifyButton;
 
 @end
 
@@ -23,7 +25,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.stepTwolabel.layer.borderColor = [self.stepTwolabel.textColor CGColor];
+    self.stepTwolabel.layer.borderWidth = 5.0;
+    self.stepTwolabel.layer.cornerRadius = self.stepTwolabel.frame.size.height / 2;
+    
+    self.verifyButton.backgroundColor = self.stepTwolabel.textColor;
+    self.verifyButton.layer.shadowOffset = CGSizeMake(0, 3);
+    self.verifyButton.layer.shadowOpacity = 1.0;
+    self.verifyButton.layer.shadowRadius = 0;
+    self.verifyButton.layer.shadowColor = [[UIColor colorWithRed:0.0f/255.0f green:167.0f/255.0f blue:135.0f/255.0f alpha:1.0] CGColor];
+    [self.verifyButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

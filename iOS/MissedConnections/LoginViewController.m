@@ -13,12 +13,22 @@
 
 @interface LoginViewController ()
 
+@property (nonatomic, weak) IBOutlet UIButton *signInButton;
+
 @end
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.signInButton.backgroundColor = [UIColor colorWithRed:6.0f/255.0f green:150.0f/255.0f blue:222.0f/255.0f alpha:1.0];
+    self.signInButton.layer.shadowOffset = CGSizeMake(0, 3);
+    self.signInButton.layer.shadowOpacity = 1.0;
+    self.signInButton.layer.shadowRadius = 0;
+    self.signInButton.layer.shadowColor = [[UIColor colorWithRed:0.0f/255.0f green:126.0f/255.0f blue:188.0f/255.0f alpha:1.0] CGColor];
+    [self.signInButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     // Do any additional setup after loading the view.
 }
 

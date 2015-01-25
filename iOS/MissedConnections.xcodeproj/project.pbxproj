@@ -24,13 +24,11 @@
 		03C554341A74867100BF76EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554331A74867100BF76EE /* CoreGraphics.framework */; };
 		03C554361A7486B600BF76EE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554351A7486B600BF76EE /* libz.dylib */; };
 		03C554381A7486CD00BF76EE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554371A7486CD00BF76EE /* libsqlite3.dylib */; };
-		1C5410261A74D8D300F2AF41 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5410251A74D8D300F2AF41 /* Images-2.xcassets */; };
 		45DDA3E7CFBC558341E181B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245A7751DC6CB688E2269A6E /* libPods.a */; };
+		7A014E461A74DF740012FADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A014E451A74DF740012FADA /* Main.storyboard */; };
 		7A43F8E11A74732200501CC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F8E01A74732200501CC3 /* main.m */; };
 		7A43F8E41A74732200501CC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F8E31A74732200501CC3 /* AppDelegate.m */; };
-		7A43F8EA1A74732200501CC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A43F8E81A74732200501CC3 /* Main.storyboard */; };
 		7A43F8EC1A74732200501CC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A43F8EB1A74732200501CC3 /* Images.xcassets */; };
-		7A43F8EF1A74732200501CC3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */; };
 		7A43F9081A74733C00501CC3 /* PhoneNumberVerificationClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */; };
 		7A43F9091A74733C00501CC3 /* PhoneNumberVerificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F9071A74733C00501CC3 /* PhoneNumberVerificationViewController.m */; };
 		7ACB1E641A74925E00A54698 /* LocationPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB1E631A74925E00A54698 /* LocationPermissionViewController.m */; };
@@ -58,18 +56,16 @@
 		03C554331A74867100BF76EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		03C554351A7486B600BF76EE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		03C554371A7486CD00BF76EE /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		1C5410251A74D8D300F2AF41 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		245A7751DC6CB688E2269A6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A1DA86A4B7F3153A2B32059 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		64F5692D88B1703234C73803 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A014E451A74DF740012FADA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7A43F8DB1A74732200501CC3 /* MissedConnections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissedConnections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A43F8DF1A74732200501CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A43F8E01A74732200501CC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A43F8E21A74732200501CC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A43F8E31A74732200501CC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A43F8E91A74732200501CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A43F8EB1A74732200501CC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7A43F8EE1A74732200501CC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7A43F9041A74733C00501CC3 /* PhoneNumberVerificationClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberVerificationClient.h; sourceTree = "<group>"; };
 		7A43F9051A74733C00501CC3 /* PhoneNumberVerificationClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberVerificationClient.m; sourceTree = "<group>"; };
 		7A43F9061A74733C00501CC3 /* PhoneNumberVerificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneNumberVerificationViewController.h; sourceTree = "<group>"; };
@@ -166,9 +162,7 @@
 				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
 				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
-				7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */,
-				1C5410251A74D8D300F2AF41 /* Images-2.xcassets */,
-				7A43F8E81A74732200501CC3 /* Main.storyboard */,
+				7A014E451A74DF740012FADA /* Main.storyboard */,
 				7A43F8DE1A74732200501CC3 /* Supporting Files */,
 			);
 			path = MissedConnections;
@@ -269,10 +263,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A43F8EA1A74732200501CC3 /* Main.storyboard in Resources */,
-				7A43F8EF1A74732200501CC3 /* LaunchScreen.xib in Resources */,
-				1C5410261A74D8D300F2AF41 /* Images-2.xcassets in Resources */,
 				7A43F8EC1A74732200501CC3 /* Images.xcassets in Resources */,
+				7A014E461A74DF740012FADA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,25 +320,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		7A43F8E81A74732200501CC3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7A43F8E91A74732200501CC3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7A43F8ED1A74732200501CC3 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7A43F8EE1A74732200501CC3 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7A43F8FC1A74732200501CC3 /* Debug */ = {
