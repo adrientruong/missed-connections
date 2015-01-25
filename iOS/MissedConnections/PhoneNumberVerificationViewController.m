@@ -62,10 +62,14 @@
         PhoneNumberVerificationClient *client = [PhoneNumberVerificationClient sharedClient];
         [client verifyWithIdentifier:self.verificationCode completionHandler:^(NSString *phoneNumber) {
             if ([phoneNumber length] > 0) {
+<<<<<<< Updated upstream
                 PFUser *user = [PFUser currentUser];
                 [user setObject:phoneNumber forKey:@"phoneNumber"];
                 [user saveEventually];
                 
+=======
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"verifiedNumber"];
+>>>>>>> Stashed changes
                 [self performSegueWithIdentifier:@"showLocationPermission" sender:self];
             } else {
                 NSLog(@"DARN!");
@@ -75,15 +79,5 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

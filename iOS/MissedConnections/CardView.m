@@ -52,7 +52,7 @@
 
 - (IBAction)requestContactInfo:(id)sender
 {
-    
+    //Request contact info -> push notification -> on approval -> Send phone number to both
 }
 
 @end

@@ -11,6 +11,8 @@
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import <Parse/Parse.h>
 
+@import CoreLocation;
+
 @interface LoginViewController ()
 
 @property (nonatomic, weak) IBOutlet UIButton *signInButton;
@@ -76,7 +78,22 @@
                       PFInstallation *installation = [PFInstallation currentInstallation];
                       [installation setObject:[[PFUser currentUser] objectForKey:@"fbid"] forKey:@"owner"];
                       [installation saveInBackground];
+                      //[self importFriends];
+                      if([[NSUserDefaults standardUserDefaults] boolForKey:@"verifiedNumber"])
+                      {
+                          if([self authorizationStatus])
+                          {
+                              [self performSegueWithIdentifier:@"showMain" sender:self];
+                          }
+                          else
+                          {
+                              [self performSegueWithIdentifier:@"showLocation" sender:self];
+                          }
+                          
+                      }
+                      else {
                       [self performSegueWithIdentifier:@"loggedIn" sender:self];
+                      }
                   }
                   else if(error)
                   {
@@ -91,6 +108,58 @@
      }];
      }];
 }
+
+- (BOOL) authorizationStatus
+{
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    switch(status)
+    {
+        case kCLAuthorizationStatusAuthorizedAlways: return YES;
+            break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse: return YES;
+            break;
+        case kCLAuthorizationStatusDenied: return NO;
+            break;
+        case kCLAuthorizationStatusNotDetermined: return NO;
+            break;
+        case kCLAuthorizationStatusRestricted: return NO;
+            break;
+    }
+}
+
+/*
+- (void) importFriends
+{
+    [FBRequestConnection startWithGraphPath:@"/me/friends"
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(
+                                              FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error
+                                              ) {
+                              NSArray *friends = (NSArray *) result; //Array of facebook friends
+                              NSLog(@"Friends %@", friends);
+                              for(NSDictionary *friend in friends)
+                              {
+                                  NSLog(@"Friend %@", friend);
+                                  PFUser *user = [PFUser user];
+                                  [user setObject:friend[@"objectID"] forKey:@"fbid"];
+                                  NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", friend[@"objectID"]]];
+                                  NSURLResponse *response = nil;
+                                  NSError *error = nil;
+                                  NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:pictureURL] returningResponse:&response error:&error];
+                                  PFFile *file = [PFFile fileWithName:@"ProfPic" data:data];
+                                  [user setObject:file forKey:@"picture"];
+                                  [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+                                   {
+                                       
+                                   }];
+                              }
+                              
+                              }];
+}
+ */
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

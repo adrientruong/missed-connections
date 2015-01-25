@@ -27,6 +27,8 @@
     
     [LocationController sharedController];
     
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"verifiedNumber"];
+    
     return YES;
 }
 
