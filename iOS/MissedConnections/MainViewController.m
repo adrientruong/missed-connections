@@ -30,10 +30,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = @"Flashback";
     self.mapView.delegate = self;
     self.peopleLocationArray = [[NSMutableArray alloc] init];
     self.selectedPeopleArray = [[NSArray alloc] init];
     self.dateButton.backgroundColor = [UIColor colorWithRed:231.0f/255.0f green:76.0f/255.0f blue:60.0f/255.0f alpha:1.0000];
+    self.dateButton.layer.cornerRadius = 6.0f;
+    self.dateButton.layer.masksToBounds = YES;
+    self.connectButton.layer.cornerRadius = 5.0f;
+    self.connectButton.layer.masksToBounds = YES;
+    self.exploreButton.layer.cornerRadius = 5.0f;
+    self.exploreButton.layer.masksToBounds = YES;
+    [self.exploreButton addTarget:self action:@selector(showExploreMap) forControlEvents:UIControlEventAllTouchEvents];
+    [self.connectButton addTarget:self action:@selector(showConnectMap) forControlEvents:UIControlEventAllTouchEvents];
+}
+
+- (void) showExploreMap
+{
+    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy] ;
+    [annotationsToRemove removeObject:self.mapView.userLocation];
+    [self.mapView removeAnnotations:annotationsToRemove];
+    [self getExplorePeopleLocation];
+}
+
+- (void) showConnectMap
+{
+    NSMutableArray * annotationsToRemove = [self.mapView.annotations mutableCopy] ;
+    [annotationsToRemove removeObject:self.mapView.userLocation];
+    [self.mapView removeAnnotations:annotationsToRemove];
+    [self getPeopleLocation];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -85,6 +110,33 @@
              NSLog(@"Error %@", error);
          }
      }];
+}
+
+- (void) getExplorePeopleLocation
+{
+    NSString *url = [NSString stringWithFormat:@"https://fierce-wildwood-9429.herokuapp.com/explore"];
+    NSOperationQueue *queue  = [[NSOperationQueue alloc] init];
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+    {
+        if(!error)
+        {
+            NSError *jsonError = nil;
+            NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if(!jsonError && jsonResponse)
+            {
+                NSArray *points = jsonResponse[@"points"];
+                for(NSDictionary *point in points)
+                {
+                    NSArray *coords = point[@"loc"][@"coordinates"];
+                    CGPoint coordPoint = CGPointMake([coords[0] floatValue], [coords[1] floatValue]);
+                    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(coordPoint.x, coordPoint.y);
+                    MKPointAnnotation *pointAnnotation = [[MKPointAnnotation alloc] init];
+                    pointAnnotation.coordinate = coord;
+                    [self.mapView addAnnotation:pointAnnotation];
+                }
+            }
+        }
+    }];
 }
 
 - (void) getLocationNameForCoordinates: (CLLocationCoordinate2D) coord
@@ -169,15 +221,20 @@
 
 - (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
 {
-    //Open Tinder View
+   //Show Foursquare Location
     if(view.annotation!=self.mapView.userLocation) {
-    NSLog(@"Annotation selected = %li", (long)view.tag);
-    NSLog(@"Selected users %@", [self.peopleLocationArray objectAtIndex:view.tag]);
-    self.selectedPeopleArray = [NSArray arrayWithArray:[self.peopleLocationArray objectAtIndex:view.tag]];
-    SwipeableViewController *swipeableView = [[SwipeableViewController alloc] init];
-    swipeableView.profileIDArray = [NSArray arrayWithArray:self.selectedPeopleArray];
-    [self presentViewController:swipeableView animated:YES completion:nil];
+        NSLog(@"Annotation selected = %li", (long)view.tag);
+        NSLog(@"Selected users %@", [self.peopleLocationArray objectAtIndex:view.tag]);
+        self.selectedPeopleArray = [NSArray arrayWithArray:[self.peopleLocationArray objectAtIndex:view.tag]];
+        SwipeableViewController *swipeableView = [[SwipeableViewController alloc] init];
+        swipeableView.profileIDArray = [NSArray arrayWithArray:self.selectedPeopleArray];
+        [self presentViewController:swipeableView animated:YES completion:nil];
     }
+}
+
+- (void) mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

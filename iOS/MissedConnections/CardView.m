@@ -8,6 +8,7 @@
 
 #import "CardView.h"
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 
 @interface CardView ()
 
@@ -35,18 +36,36 @@
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
     self.profileImageView.layer.masksToBounds = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openFacebookProfile)];
+    [self.profileImageView addGestureRecognizer:tapGesture];
     
-    NSLog(@"Profile %@", profile);
     self.nameLabel.text = [profile objectForKey:@"name"];
+    self.openChatButton.titleLabel.text = [NSString stringWithFormat:@"Open chat with %@", [profile objectForKey:@"name"]];
     PFFile *imageFile = [profile objectForKey:@"picture"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
      {
          self.profileImageView.image = [UIImage imageWithData:data];
      }];
     
-    self.openChatButton.titleLabel.text = [NSString stringWithFormat:@"Open chat with %@", [profile objectForKey:@"name"]];
+    [FBRequestConnection startWithGraphPath:[NSString stringWithFormat:@"/%@",[profile objectForKey:@"fbid"]]
+                                 parameters:nil
+                                 HTTPMethod:@"GET"
+                          completionHandler:^(
+                                              FBRequestConnection *connection,
+                                              id result,
+                                              NSError *error
+                                              ) {
+                              /* handle the result */
+                              NSLog(@"REsult %@", result);
+                          }];
     
     self.user = profile;
+
+}
+
+- (void) openFacebookProfile
+{
+    //Open web view with url (facebook.com/sachin.kesiraju)
 }
 
 - (IBAction)sendFriendRequest:(id)sender

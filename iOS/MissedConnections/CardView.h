@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *openChatButton;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *professionalDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *interestsLabel;
 
 @property (strong, nonatomic) NSDictionary *userProfile;
 
