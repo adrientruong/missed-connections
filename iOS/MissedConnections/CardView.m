@@ -9,6 +9,12 @@
 #import "CardView.h"
 #import <Parse/Parse.h>
 
+@interface CardView ()
+
+@property (nonatomic, strong) PFUser *user;
+
+@end
+
 @implementation CardView
 
 - (instancetype) initWithFrame:(CGRect)frame
@@ -36,6 +42,8 @@
         {
             [names addObjectsFromArray:objects];
         }
+         
+         self.user = [objects firstObject];
      }];
     self.nameLabel.text = names[0][@"name"];
     self.profileImageView.image = profileInfo[@"image"];
@@ -52,7 +60,22 @@
 
 - (IBAction)requestContactInfo:(id)sender
 {
+    PFObject *contactRequest = [PFObject objectWithClassName:@"ContactRequest"];
+    contactRequest[@"fromUser"] = [PFUser currentUser];
+    contactRequest[@"toUser"] = self.user;
+    contactRequest[@"status"] = @"requested";
     
+    [contactRequest saveEventually];
+    
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"owner" equalTo:self.user[@"fbid"]];
+    
+    NSString *message = [NSString stringWithFormat:@"%@ has requested your contact info.", [PFUser currentUser][@"name"]];
+    // Send push notification to query
+    [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                   withMessage:message];
+
 }
 
 @end
