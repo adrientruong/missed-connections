@@ -28,25 +28,27 @@
     self.swipeableView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
     [self.swipeableView setNeedsLayout];
     [self.swipeableView layoutIfNeeded];
+    [self.view addSubview:self.swipeableView];
+    self.swipeableView.dataSource = self;
+    self.swipeableView.delegate = self;
     self.currentProfileIndex = 0;
     self.userDetailsArray = [[NSMutableArray alloc] init];
-    for(int i=0; i<self.profileIDArray.count; i++)
-    {
-        PFQuery *query  = [PFQuery queryWithClassName:@"User"];
-        [query whereKey:@"fbid" equalTo:[self.profileIDArray objectAtIndex:i]];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    PFQuery *query  = [PFUser query];
+    [query whereKey:@"fbid" containedIn:self.profileIDArray];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+     {
+         if(!error && objects)
          {
-            if(!error && objects)
-            {
-                NSLog(@"Object %@", objects[0]);
-                [self.userDetailsArray addObject:objects[0]];
-            }
-             else
-             {
-                 NSLog(@"Error %@", error);
-             }
-         }];
-    }
+             NSLog(@"Object %@", objects);
+             [self.userDetailsArray addObjectsFromArray:objects];
+         }
+         else
+         {
+             NSLog(@"Error %@", error);
+         }
+     }];
+    [self.swipeableView discardAllSwipeableViews];
+    [self.swipeableView loadNextSwipeableViewsIfNeeded];
 }
 
 #pragma mark - Swipeable view datasource

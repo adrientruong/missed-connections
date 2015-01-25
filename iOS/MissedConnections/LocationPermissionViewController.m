@@ -40,7 +40,7 @@
 - (IBAction)allowLocationAccessButtonWasTapped
 {
     [[LocationController sharedController].locationManager requestAlwaysAuthorization];
-    [self performSegueWithIdentifier:@"showMain" sender:self];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="64e-aj-iE0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kYx-M9-Odv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZyZ-Wv-G8z" kind="relationship" relationship="rootViewController" id="5fr-6E-UQ2"/>
+                        <segue destination="53w-CN-StO" kind="relationship" relationship="rootViewController" id="qt9-8U-UUi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZb-dS-LH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -68,7 +68,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="8ib-0h-hJN"/>
+                    <navigationItem key="navigationItem" id="8ib-0h-hJN">
+                        <barButtonItem key="leftBarButtonItem" id="zje-5Y-1XX"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="oS1-Wt-fzi" id="sMI-RH-1vR"/>
                         <segue destination="Q9u-F7-9BP" kind="show" identifier="showTinder" id="snL-ab-gLn"/>
@@ -76,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-rt-Mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="-966"/>
+            <point key="canvasLocation" x="1816" y="-966"/>
         </scene>
         <!--Swipeable View Controller-->
         <scene sceneID="he6-JG-C2s">
@@ -94,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2F-09-Jqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-638"/>
+            <point key="canvasLocation" x="2400" y="-638"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YtD-q6-2kS">
@@ -277,12 +279,31 @@
                     </view>
                     <connections>
                         <outlet property="giveLocationAccessButton" destination="0bA-Bc-lVI" id="D3C-mT-UfX"/>
-                        <segue destination="ZyZ-Wv-G8z" kind="show" identifier="showMain" id="Kwr-ik-oCM"/>
+                        <segue destination="kYx-M9-Odv" kind="show" identifier="showMain" id="Kwr-ik-oCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LZ-X6-gCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="917"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PGp-jo-5QA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kYx-M9-Odv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5aB-ou-5u0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZyZ-Wv-G8z" kind="relationship" relationship="rootViewController" id="dfq-pR-xDC"/>
+                        <segue destination="64e-aj-iE0" kind="presentation" identifier="showIntro" id="KJi-UU-JUR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJR-SN-0uz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936" y="-990"/>
         </scene>
     </scenes>
     <resources>
@@ -290,7 +311,4 @@
         <image name="launch.png" width="640" height="1136"/>
         <image name="phonescreen.png" width="2898" height="5144"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5fr-6E-UQ2"/>
-    </inferredMetricsTieBreakers>
 </document>

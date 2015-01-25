@@ -9,11 +9,13 @@
 #import "SwipeViewController.h"
 #import "ZLSwipeableView.h"
 #import "CardView.h"
+#import <Parse/Parse.h>
 
 @interface SwipeViewController () <ZLSwipeableViewDataSource, ZLSwipeableViewDelegate>
 
 @property (strong, nonatomic) ZLSwipeableView *swipeableView;
 @property (nonatomic) NSInteger currentProfileIndex;
+@property (strong, nonatomic) NSArray *peopleProfileArray;
 
 @end
 
@@ -29,6 +31,17 @@
     [self.swipeableView layoutIfNeeded];
     self.swipeableView.delegate = self;
     self.swipeableView.dataSource = self;
+    PFQuery *query = [PFUser query];
+    [query whereKey:@"fbid" containedIn:self.peopleArray];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+    {
+       if(!error && objects)
+       {
+           self.peopleProfileArray = [[NSArray alloc] initWithArray:objects];
+       }
+    }];
+    [self.swipeableView discardAllSwipeableViews];
+    [self.swipeableView loadNextSwipeableViewsIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,6 +74,7 @@
     if(self.currentProfileIndex < self.peopleArray.count)
     {
         CardView *cardView = [[CardView alloc] initWithFrame:self.view.frame];
+        [cardView populateCardWithProfile:[self.peopleProfileArray objectAtIndex:self.currentProfileIndex]];
         self.currentProfileIndex ++;
         return cardView;
     }
