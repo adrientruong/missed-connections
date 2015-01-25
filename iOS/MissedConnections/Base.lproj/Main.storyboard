@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d3r-M7-WQg">
-                                <rect key="frame" x="236" y="371" width="129" height="30"/>
+                                <rect key="frame" x="236" y="506" width="129" height="30"/>
                                 <state key="normal" title="Login to Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -26,11 +26,19 @@
                                     <action selector="login:" destination="bap-tV-xqP" eventType="touchUpInside" id="9Jj-Dq-snG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Flashback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fel-dl-72W">
+                                <rect key="frame" x="249" y="117" width="102" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yZf-vk-8Pi" firstAttribute="top" secondItem="d3r-M7-WQg" secondAttribute="bottom" constant="199" id="EMy-De-Eas"/>
-                            <constraint firstAttribute="centerX" secondItem="d3r-M7-WQg" secondAttribute="centerX" constant="-0.5" id="nOz-YF-5Zo"/>
+                            <constraint firstAttribute="centerY" secondItem="Fel-dl-72W" secondAttribute="centerY" constant="172" id="NgN-Qo-9YP"/>
+                            <constraint firstAttribute="centerX" secondItem="Fel-dl-72W" secondAttribute="centerX" id="QyG-Bj-CvK"/>
+                            <constraint firstAttribute="centerX" secondItem="d3r-M7-WQg" secondAttribute="centerX" id="aYe-y4-for"/>
+                            <constraint firstAttribute="centerY" secondItem="d3r-M7-WQg" secondAttribute="centerY" constant="-221" id="s0d-gc-Tvt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="WSK-Sx-Gec"/>
@@ -61,7 +69,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
-                                <rect key="frame" x="23" y="151" width="584" height="41"/>
+                                <rect key="frame" x="8" y="151" width="584" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -69,12 +77,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="73" id="Erf-uk-sdm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-23" id="HPw-Ys-qxS"/>
-                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" constant="-10.5" id="Hvi-3j-bGT"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="87" id="QLf-hh-txm"/>
                             <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="54" id="cag-6b-gut"/>
-                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="7" id="fth-94-gq8"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="-8" id="eNT-w9-pVB"/>
+                            <constraint firstItem="ElH-ax-y7x" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leading" constant="238" id="k8m-q0-rnc"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="centerX" secondItem="bpT-Qc-HL3" secondAttribute="centerX" id="nLi-6N-gPQ"/>
+                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="73" id="sWv-ke-F1V"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="87" id="xMf-bh-I8T"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
