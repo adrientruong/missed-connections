@@ -118,15 +118,6 @@
     
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"showTinder"])
-    {
-        SwipeableViewController *swipeableView = (SwipeableViewController *) segue.destinationViewController;
-        swipeableView.profileIDArray = [NSArray arrayWithArray:self.selectedPeopleArray];
-    }
-}
-
 #pragma mark - Map view delegate
 
 - (void) mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -136,7 +127,9 @@
     NSLog(@"Annotation selected = %li", (long)view.tag);
     NSLog(@"Selected users %@", [self.peopleLocationArray objectAtIndex:view.tag]);
     self.selectedPeopleArray = [NSArray arrayWithArray:[self.peopleLocationArray objectAtIndex:view.tag]];
-    [self performSegueWithIdentifier:@"showTinder" sender:self];
+    SwipeableViewController *swipeableView = [[SwipeableViewController alloc] init];
+    swipeableView.profileIDArray = [NSArray arrayWithArray:self.selectedPeopleArray];
+    [self presentViewController:swipeableView animated:YES completion:nil];
     }
 }
 

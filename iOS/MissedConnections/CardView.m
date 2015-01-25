@@ -28,16 +28,23 @@
     return self;
 }
 
-- (void) populateCardWithProfile: (NSDictionary *) profileInfo
+- (void) populateCardWithProfile: (PFUser *) profile
 {
-    self.layer.cornerRadius = 5.0f;
+    self.layer.cornerRadius = 10.0f;
     self.layer.masksToBounds = YES;
-    self.layer.shadowRadius = 2.0f;
-    self.layer.shadowColor = [UIColor grayColor].CGColor;
     
-    PFUser *user = (PFUser *)profileInfo;
-    NSLog(@"User %@", user);
-    self.nameLabel.text = [user objectForKey:@"name"];
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2;
+    self.profileImageView.layer.masksToBounds = YES;
+    
+    NSLog(@"Profile %@", profile);
+    self.nameLabel.text = [profile objectForKey:@"name"];
+    PFFile *imageFile = [profile objectForKey:@"picture"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error)
+     {
+         self.profileImageView.image = [UIImage imageWithData:data];
+     }];
+    
+    self.openChatButton.titleLabel.text = [NSString stringWithFormat:@"Open chat with %@", [profile objectForKey:@"name"]];
 }
 
 - (IBAction)sendFriendRequest:(id)sender

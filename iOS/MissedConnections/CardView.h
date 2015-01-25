@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface CardView : UIView
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *openChatButton;
 
 @property (strong, nonatomic) NSDictionary *userProfile;
 
-- (void) populateCardWithProfile: (NSDictionary *) profileInfo;
-
+- (void) populateCardWithProfile: (PFUser *) profile;
 @end
