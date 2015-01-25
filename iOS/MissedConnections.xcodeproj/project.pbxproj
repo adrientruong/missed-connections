@@ -16,6 +16,9 @@
 		030DCCAF1A74FBB20077F826 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 030DCCAE1A74FBB20077F826 /* MapKit.framework */; };
 		030DCCB21A751E6C0077F826 /* SwipeableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 030DCCB11A751E6C0077F826 /* SwipeableViewController.m */; };
 		030DCCB41A752FB20077F826 /* annotation.png in Resources */ = {isa = PBXBuildFile; fileRef = 030DCCB31A752FB20077F826 /* annotation.png */; };
+		030DCCB61A753A420077F826 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 030DCCB51A753A420077F826 /* icon.png */; };
+		030DCCB81A753B000077F826 /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 030DCCB71A753B000077F826 /* launch.png */; };
+		030DCCBA1A753C4D0077F826 /* phonescreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 030DCCB91A753C4D0077F826 /* phonescreen.png */; };
 		03C554161A747F8C00BF76EE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C554151A747F8C00BF76EE /* LoginViewController.m */; };
 		03C554181A74844200BF76EE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554171A74844200BF76EE /* ParseFacebookUtils.framework */; };
 		03C5541A1A74844B00BF76EE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554191A74844B00BF76EE /* FacebookSDK.framework */; };
@@ -62,6 +65,9 @@
 		030DCCB01A751E6C0077F826 /* SwipeableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableViewController.h; sourceTree = "<group>"; };
 		030DCCB11A751E6C0077F826 /* SwipeableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableViewController.m; sourceTree = "<group>"; };
 		030DCCB31A752FB20077F826 /* annotation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = annotation.png; sourceTree = "<group>"; };
+		030DCCB51A753A420077F826 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		030DCCB71A753B000077F826 /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		030DCCB91A753C4D0077F826 /* phonescreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phonescreen.png; sourceTree = "<group>"; };
 		03C554141A747F8C00BF76EE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		03C554151A747F8C00BF76EE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		03C554171A74844200BF76EE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 				030DCCA91A74F2720077F826 /* CardView.m */,
 				030DCCA61A74F25B0077F826 /* CardView.xib */,
 				030DCCB31A752FB20077F826 /* annotation.png */,
+				030DCCB51A753A420077F826 /* icon.png */,
+				030DCCB71A753B000077F826 /* launch.png */,
+				030DCCB91A753C4D0077F826 /* phonescreen.png */,
 				7A43F8EB1A74732200501CC3 /* Images.xcassets */,
 				415BBB051A74D0EF00EE6BA2 /* Login View Controller */,
 				7A014E451A74DF740012FADA /* Main.storyboard */,
@@ -317,7 +326,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030DCCBA1A753C4D0077F826 /* phonescreen.png in Resources */,
+				030DCCB81A753B000077F826 /* launch.png in Resources */,
 				030DCCB41A752FB20077F826 /* annotation.png in Resources */,
+				030DCCB61A753A420077F826 /* icon.png in Resources */,
 				7A43F8EC1A74732200501CC3 /* Images.xcassets in Resources */,
 				7A014E461A74DF740012FADA /* Main.storyboard in Resources */,
 				030DCCA71A74F25B0077F826 /* CardView.xib in Resources */,
