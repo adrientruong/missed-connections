@@ -69,11 +69,16 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="8ib-0h-hJN">
-                        <barButtonItem key="leftBarButtonItem" id="zje-5Y-1XX"/>
+                        <barButtonItem key="rightBarButtonItem" title="Contacts" id="xxl-E6-MYf">
+                            <connections>
+                                <action selector="contactsButtonTapped:" destination="ZyZ-Wv-G8z" id="Iam-Fs-Ckq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="oS1-Wt-fzi" id="sMI-RH-1vR"/>
                         <segue destination="Q9u-F7-9BP" kind="show" identifier="showTinder" id="snL-ab-gLn"/>
+                        <segue destination="53w-CN-StO" kind="presentation" identifier="showIntro" id="maO-An-3g8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-rt-Mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -311,4 +316,7 @@
         <image name="launch.png" width="640" height="1136"/>
         <image name="phonescreen.png" width="2898" height="5144"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="maO-An-3g8"/>
+    </inferredMetricsTieBreakers>
 </document>

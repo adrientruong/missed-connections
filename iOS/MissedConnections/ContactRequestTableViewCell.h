@@ -10,4 +10,9 @@
 
 @interface ContactRequestTableViewCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *profileImageView;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak) IBOutlet UIButton *acceptButton;
+@property (nonatomic, weak) IBOutlet UIButton *rejectButton;
+
 @end

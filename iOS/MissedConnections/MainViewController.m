@@ -10,12 +10,15 @@
 #import "SwipeableViewController.h"
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
+#import "ContactRequestsViewController.h"
 
 @interface MainViewController () <MKMapViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *peopleLocationArray;
 @property (nonatomic) NSInteger indexTag;
 @property (strong, nonatomic) NSArray *selectedPeopleArray;
+
+- (IBAction)contactsButtonTapped:(id)sender;
 
 @end
 
@@ -116,6 +119,12 @@
 - (IBAction)toggleDatePicker:(id)sender
 {
     
+}
+
+- (IBAction)contactsButtonTapped:(id)sender
+{
+    ContactRequestsViewController *contactRequestsViewController = [[ContactRequestsViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self presentViewController:contactRequestsViewController animated:YES completion:nil];
 }
 
 #pragma mark - Map view delegate

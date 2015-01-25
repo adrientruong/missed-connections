@@ -1,18 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ContactRequestTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="ContactRequestTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJy-Il-gHp">
+                        <rect key="frame" x="8" y="12" width="57" height="57"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="57" id="4tP-u1-E8J"/>
+                            <constraint firstAttribute="width" constant="57" id="V7g-KX-S6e"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Adrien Truong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ly-88-S2H">
+                        <rect key="frame" x="73" y="30" width="133" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-bj-JnI">
+                        <rect key="frame" x="224" y="20" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="uwr-z5-NRC"/>
+                            <constraint firstAttribute="height" constant="40" id="vlQ-C7-GtM"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="check">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4l-6s-thg">
+                        <rect key="frame" x="272" y="20" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="QQJ-nd-shm"/>
+                            <constraint firstAttribute="height" constant="40" id="VX7-Mw-TJ6"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="delete">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="CJy-Il-gHp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="6fT-4U-sNQ"/>
+                    <constraint firstItem="CJy-Il-gHp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="7xo-uw-pZg"/>
+                    <constraint firstItem="dOH-bj-JnI" firstAttribute="leading" secondItem="2Ly-88-S2H" secondAttribute="trailing" constant="18" id="8gW-9U-MkZ"/>
+                    <constraint firstAttribute="centerY" secondItem="CJy-Il-gHp" secondAttribute="centerY" id="CCY-Ne-ul4"/>
+                    <constraint firstAttribute="centerY" secondItem="2Ly-88-S2H" secondAttribute="centerY" id="M6S-EZ-swb"/>
+                    <constraint firstItem="U4l-6s-thg" firstAttribute="leading" secondItem="dOH-bj-JnI" secondAttribute="trailing" constant="8" id="Oro-RW-ndK"/>
+                    <constraint firstItem="U4l-6s-thg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UcR-Wa-Tue"/>
+                    <constraint firstAttribute="centerY" secondItem="dOH-bj-JnI" secondAttribute="centerY" constant="-0.5" id="jNp-S0-JSx"/>
+                    <constraint firstItem="2Ly-88-S2H" firstAttribute="leading" secondItem="CJy-Il-gHp" secondAttribute="trailing" constant="8" id="mgK-KW-FzF"/>
+                    <constraint firstAttribute="centerY" secondItem="U4l-6s-thg" secondAttribute="centerY" constant="-0.5" id="oyY-jm-ycj"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="6fT-4U-sNQ"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="acceptButton" destination="dOH-bj-JnI" id="un0-07-0v4"/>
+                <outlet property="nameLabel" destination="2Ly-88-S2H" id="bQh-eo-Is9"/>
+                <outlet property="profileImageView" destination="CJy-Il-gHp" id="g7F-GK-ozh"/>
+                <outlet property="rejectButton" destination="U4l-6s-thg" id="WKw-P6-Jhg"/>
+            </connections>
+            <point key="canvasLocation" x="250" y="280"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="check" width="1607" height="1607"/>
+        <image name="delete" width="1595" height="1595"/>
+    </resources>
 </document>

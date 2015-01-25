@@ -31,7 +31,6 @@
 		03C554281A7485C200BF76EE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554271A7485C200BF76EE /* MobileCoreServices.framework */; };
 		03C5542A1A7485D500BF76EE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554291A7485D500BF76EE /* CoreData.framework */; };
 		03C5542C1A7485E600BF76EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C5542B1A7485E600BF76EE /* QuartzCore.framework */; };
-		03C554301A74865D00BF76EE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C5542F1A74865D00BF76EE /* StoreKit.framework */; };
 		03C554321A74866C00BF76EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554311A74866C00BF76EE /* CoreLocation.framework */; };
 		03C554341A74867100BF76EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554331A74867100BF76EE /* CoreGraphics.framework */; };
 		03C554361A7486B600BF76EE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554351A7486B600BF76EE /* libz.dylib */; };
@@ -39,6 +38,8 @@
 		45DDA3E7CFBC558341E181B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245A7751DC6CB688E2269A6E /* libPods.a */; };
 		7A014E461A74DF740012FADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A014E451A74DF740012FADA /* Main.storyboard */; };
 		7A014E491A7518540012FADA /* ContactRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A014E481A7518540012FADA /* ContactRequestsViewController.m */; };
+		7A014E521A755D5B0012FADA /* ContactRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A014E501A755D5B0012FADA /* ContactRequestTableViewCell.m */; };
+		7A014E531A755D5B0012FADA /* ContactRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A014E511A755D5B0012FADA /* ContactRequestTableViewCell.xib */; };
 		7A43F8E11A74732200501CC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F8E01A74732200501CC3 /* main.m */; };
 		7A43F8E41A74732200501CC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A43F8E31A74732200501CC3 /* AppDelegate.m */; };
 		7A43F8EC1A74732200501CC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A43F8EB1A74732200501CC3 /* Images.xcassets */; };
@@ -82,7 +83,6 @@
 		03C554291A7485D500BF76EE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		03C5542B1A7485E600BF76EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		03C5542D1A7485EC00BF76EE /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
-		03C5542F1A74865D00BF76EE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		03C554311A74866C00BF76EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		03C554331A74867100BF76EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		03C554351A7486B600BF76EE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -93,6 +93,9 @@
 		7A014E451A74DF740012FADA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7A014E471A7518540012FADA /* ContactRequestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRequestsViewController.h; sourceTree = "<group>"; };
 		7A014E481A7518540012FADA /* ContactRequestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRequestsViewController.m; sourceTree = "<group>"; };
+		7A014E4F1A755D5B0012FADA /* ContactRequestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactRequestTableViewCell.h; sourceTree = "<group>"; };
+		7A014E501A755D5B0012FADA /* ContactRequestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactRequestTableViewCell.m; sourceTree = "<group>"; };
+		7A014E511A755D5B0012FADA /* ContactRequestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactRequestTableViewCell.xib; sourceTree = "<group>"; };
 		7A43F8DB1A74732200501CC3 /* MissedConnections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissedConnections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A43F8DF1A74732200501CC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A43F8E01A74732200501CC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,7 +124,6 @@
 				03C554381A7486CD00BF76EE /* libsqlite3.dylib in Frameworks */,
 				03C554361A7486B600BF76EE /* libz.dylib in Frameworks */,
 				03C554341A74867100BF76EE /* CoreGraphics.framework in Frameworks */,
-				03C554301A74865D00BF76EE /* StoreKit.framework in Frameworks */,
 				03C5542C1A7485E600BF76EE /* QuartzCore.framework in Frameworks */,
 				03C5542A1A7485D500BF76EE /* CoreData.framework in Frameworks */,
 				03C554281A7485C200BF76EE /* MobileCoreServices.framework in Frameworks */,
@@ -214,6 +216,9 @@
 				7ACB1E6C1A74989300A54698 /* ServerClient.m */,
 				7A014E471A7518540012FADA /* ContactRequestsViewController.h */,
 				7A014E481A7518540012FADA /* ContactRequestsViewController.m */,
+				7A014E4F1A755D5B0012FADA /* ContactRequestTableViewCell.h */,
+				7A014E501A755D5B0012FADA /* ContactRequestTableViewCell.m */,
+				7A014E511A755D5B0012FADA /* ContactRequestTableViewCell.xib */,
 				030DCCA81A74F2720077F826 /* CardView.h */,
 				030DCCA91A74F2720077F826 /* CardView.m */,
 				030DCCA61A74F25B0077F826 /* CardView.xib */,
@@ -246,7 +251,6 @@
 				03C554351A7486B600BF76EE /* libz.dylib */,
 				03C554331A74867100BF76EE /* CoreGraphics.framework */,
 				03C554311A74866C00BF76EE /* CoreLocation.framework */,
-				03C5542F1A74865D00BF76EE /* StoreKit.framework */,
 				03C5542D1A7485EC00BF76EE /* libz.1.1.3.dylib */,
 				03C5542B1A7485E600BF76EE /* QuartzCore.framework */,
 				03C554291A7485D500BF76EE /* CoreData.framework */,
@@ -299,6 +303,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
 						};
 					};
 				};
@@ -326,6 +333,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A014E531A755D5B0012FADA /* ContactRequestTableViewCell.xib in Resources */,
 				030DCCBA1A753C4D0077F826 /* phonescreen.png in Resources */,
 				030DCCB81A753B000077F826 /* launch.png in Resources */,
 				030DCCB41A752FB20077F826 /* annotation.png in Resources */,
@@ -376,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A014E521A755D5B0012FADA /* ContactRequestTableViewCell.m in Sources */,
 				7A43F8E41A74732200501CC3 /* AppDelegate.m in Sources */,
 				7A014E491A7518540012FADA /* ContactRequestsViewController.m in Sources */,
 				7A43F8E11A74732200501CC3 /* main.m in Sources */,
@@ -488,7 +497,7 @@
 				INFOPLIST_FILE = MissedConnections/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "161c9f14-55d3-44dd-a4f3-702450555f65";
 			};
 			name = Debug;
 		};
@@ -507,7 +516,7 @@
 				INFOPLIST_FILE = MissedConnections/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "161c9f14-55d3-44dd-a4f3-702450555f65";
 			};
 			name = Release;
 		};

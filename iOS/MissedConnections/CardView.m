@@ -45,6 +45,8 @@
      }];
     
     self.openChatButton.titleLabel.text = [NSString stringWithFormat:@"Open chat with %@", [profile objectForKey:@"name"]];
+    
+    self.user = profile;
 }
 
 - (IBAction)sendFriendRequest:(id)sender

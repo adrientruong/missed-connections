@@ -8,11 +8,12 @@
 
 #import "ContactRequestsViewController.h"
 #import <Parse/Parse.h>
+#import "ContactRequestTableViewCell.h"
 
-@interface ContactRequestsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ContactRequestsViewController ()
 
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *contactRequests;
+@property (nonatomic, strong) NSArray *establishedContacts;
 
 @end
 
@@ -20,6 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UINib *cellNib = [UINib nibWithNibName:@"ContactRequestTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:@"ContactRequestCell"];
+    
+    self.tableView.rowHeight = 80;
     // Do any additional setup after loading the view.
 }
 
@@ -27,14 +33,35 @@
 {
     [super viewWillAppear:animated];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"ContactRequest"];
+    PFQuery *fromUserQuery = [PFQuery queryWithClassName:@"ContactRequest"];
+    [fromUserQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+
+    PFQuery *toUserQuery = [PFQuery queryWithClassName:@"ContactRequest"];
+    [toUserQuery whereKey:@"toUser" equalTo:[PFUser currentUser]];
+
+    PFQuery *query = [PFQuery orQueryWithSubqueries:@[fromUserQuery, toUserQuery]];
+    [query includeKey:@"fromUser"];
+    [query includeKey:@"toUser"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!objects) {
             NSLog(@"Error getting contact requests:%@", error);
             return;
         }
         
-        self.contactRequests = objects;
+        NSMutableArray *contactRequests = [NSMutableArray array];
+        NSMutableArray *establishedContacts = [NSMutableArray array];
+        
+        for (PFObject *contactRequest in objects) {
+            if ([contactRequest[@"status"] isEqualToString:@"requested"]) {
+                [contactRequests addObject:contactRequest];
+            } else {
+                [establishedContacts addObject:contactRequest];
+            }
+        }
+        
+        self.contactRequests = contactRequests;
+        self.establishedContacts = establishedContacts;
         
         [self.tableView reloadData];
     }];
@@ -44,45 +71,62 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.contactRequests count];
+    NSArray *array = self.contactRequests;
+    if (section == 1) {
+        array = self.establishedContacts;
+    }
+
+    return [array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    UIButton *acceptButton = (UIButton *)cell.accessoryView;
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"Cell"];
-        
-        UIButton *accept = [UIButton buttonWithType:UIButtonTypeCustom];
-        accept.tag = indexPath.row;
-        cell.accessoryView = accept;
+    ContactRequestTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ContactRequestCell" forIndexPath:indexPath];
+    
+    NSArray *array = self.contactRequests;
+    if (indexPath.section == 1) {
+        array = self.establishedContacts;
     }
     
-    PFObject *contactRequest = self.contactRequests[indexPath.row];
-    PFUser *fromUser = contactRequest[@"fromUser"];
-    cell.textLabel.text = fromUser[@"name"];
+    PFObject *contactRequest = array[indexPath.row];
+    PFUser *otherUser = contactRequest[@"fromUser"];
+    if ([otherUser.objectId isEqualToString:[PFUser currentUser].objectId]) {
+        otherUser = contactRequest[@"toUser"];
+    }
+    cell.nameLabel.text = otherUser[@"name"];
     
-    acceptButton.hidden = [contactRequest[@"status"] isEqualToString:@"accepted"];
+    PFFile *imageFile = [otherUser objectForKey:@"picture"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+         cell.profileImageView.image = [UIImage imageWithData:data];
+     }];
+
     
+    cell.acceptButton.hidden = [contactRequest[@"status"] isEqualToString:@"accepted"];
+    cell.rejectButton.hidden = [contactRequest[@"status"] isEqualToString:@"accepted"];
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 0) {
+        return;
+    }
+    
     PFObject *contactRequest = self.contactRequests[indexPath.row];
     
-    if ([contactRequest[@"status"] isEqualToString:@"accepted"]) {
-        PFUser *fromUser = contactRequest[@"fromUser"];
-
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Phone Number" message:fromUser[@"phoneNumber"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        [alertView show];
+    PFUser *otherUser = contactRequest[@"fromUser"];
+    if (otherUser.objectId == [PFUser currentUser].objectId) {
+        otherUser = contactRequest[@"toUser"];
     }
+
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Phone Number" message:otherUser[@"phoneNumber"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alertView show];
 }
 
 - (void)acceptButtonTapped:(UIButton *)button
@@ -90,7 +134,6 @@
     PFObject *contactRequest = self.contactRequests[button.tag];
     contactRequest[@"status"] = @"accepted";
     [contactRequest saveEventually];
-    
 }
 
 @end
