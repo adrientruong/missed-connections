@@ -25,9 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"Id's received %@", self.profileIDArray);
+    self.view.backgroundColor = [UIColor grayColor];
     self.swipeableView = [[ZLSwipeableView alloc] initWithFrame:self.view.frame];
-    [self.swipeableView setNeedsLayout];
-    [self.swipeableView layoutIfNeeded];
     [self.view addSubview:self.swipeableView];
     self.swipeableView.dataSource = self;
     self.swipeableView.delegate = self;
@@ -41,22 +40,34 @@
          {
              NSLog(@"Object %@", objects);
              [self.userDetailsArray addObjectsFromArray:objects];
+             [self.swipeableView discardAllSwipeableViews];
+             [self.swipeableView loadNextSwipeableViewsIfNeeded];
          }
          else
          {
              NSLog(@"Error %@", error);
          }
      }];
-    [self.swipeableView discardAllSwipeableViews];
-    [self.swipeableView loadNextSwipeableViewsIfNeeded];
 }
 
 #pragma mark - Swipeable view datasource
 
+- (void) swipeableView:(ZLSwipeableView *)swipeableView didSwipeLeft:(UIView *)view
+{
+    NSLog(@"Swiped left");
+}
+
+- (void) swipeableView:(ZLSwipeableView *)swipeableView didSwipeRight:(UIView *)view
+{
+    NSLog(@"Swiped right");
+}
+
 - (UIView *) nextViewForSwipeableView:(ZLSwipeableView *)swipeableView
 {
+    NSLog(@"Calling tinder method");
     if(self.currentProfileIndex < self.userDetailsArray.count)
     {
+        NSLog(@"Setting card view details");
         CardView *cardView = [[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil][0];
         [cardView setUserProfile:[self.userDetailsArray objectAtIndex:self.currentProfileIndex]];
         self.currentProfileIndex ++;

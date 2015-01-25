@@ -35,21 +35,9 @@
     self.layer.shadowRadius = 2.0f;
     self.layer.shadowColor = [UIColor grayColor].CGColor;
     
-    NSMutableArray *names = [[NSMutableArray alloc] init];
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query whereKey:@"fbid" equalTo:profileInfo[@"_id"]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-     {
-        if(!error && objects.count >0)
-        {
-            [names addObjectsFromArray:objects];
-        }
-         
-         self.user = [objects firstObject];
-     }];
-    self.nameLabel.text = names[0][@"name"];
-    self.profileImageView.image = profileInfo[@"image"];
-    self.userProfile = profileInfo;
+    PFUser *user = (PFUser *)profileInfo;
+    NSLog(@"User %@", user);
+    self.nameLabel.text = [user objectForKey:@"name"];
 }
 
 - (IBAction)sendFriendRequest:(id)sender
