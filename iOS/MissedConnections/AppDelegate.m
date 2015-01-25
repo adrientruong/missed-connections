@@ -29,6 +29,10 @@
     
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"verifiedNumber"];
     
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
+    
     return YES;
 }
 
