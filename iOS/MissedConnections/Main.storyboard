@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ud-rt-Mok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="-638"/>
+            <point key="canvasLocation" x="1190" y="-628"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="YtD-q6-2kS">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Xn-IF-TZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-187" y="-329"/>
+            <point key="canvasLocation" x="-181" y="-345"/>
         </scene>
         <!--Phone Number Verification View Controller-->
         <scene sceneID="VYh-Sj-6iS">
@@ -264,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LZ-X6-gCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060" y="581"/>
+            <point key="canvasLocation" x="628" y="849"/>
         </scene>
     </scenes>
     <resources>
