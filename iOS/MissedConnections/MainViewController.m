@@ -186,7 +186,7 @@
         [self.view addSubview:tableView];
         
         NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:tableView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeRight multiplier:1.0 constant:0];
-        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-64-[tableView]|" options:0 metrics:nil views:views]];
+        [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-111-[tableView]|" options:0 metrics:nil views:views]];
         [self.view addConstraint:constraint];
         
         [self.view layoutIfNeeded];
