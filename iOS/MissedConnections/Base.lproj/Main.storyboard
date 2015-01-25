@@ -74,17 +74,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElH-ax-y7x">
-                                <rect key="frame" x="238" y="265" width="145" height="30"/>
-                                <state key="normal" title="Verify Phone Number">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cVv-5u-zdO" kind="presentation" id="cOS-5M-Tzp"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
-                                <rect key="frame" x="8" y="151" width="584" height="41"/>
+                                <rect key="frame" x="8" y="72" width="584" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -96,11 +87,22 @@
                                 </state>
                                 <connections>
                                     <action selector="verifyButtonWasTapped" destination="6VE-58-Ugf" eventType="touchUpInside" id="c3B-j6-eY9"/>
+                                    <segue destination="cVv-5u-zdO" kind="presentation" id="cOS-5M-Tzp"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next, we need to verify your phone number. When you're ready, tap Verify Phone Number and send the text." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XM-cX-MPr">
+                                <rect key="frame" x="8" y="151" width="584" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="71" id="Erf-uk-sdm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6XM-cX-MPr" secondAttribute="trailing" constant="-8" id="HPw-Ys-qxS"/>
+                            <constraint firstAttribute="centerX" secondItem="ElH-ax-y7x" secondAttribute="centerX" constant="-11.5" id="Hvi-3j-bGT"/>
+                            <constraint firstItem="6XM-cX-MPr" firstAttribute="top" secondItem="4bR-ic-fDJ" secondAttribute="bottom" constant="8" id="QLf-hh-txm"/>
                             <constraint firstItem="ElH-ax-y7x" firstAttribute="top" secondItem="6XM-cX-MPr" secondAttribute="bottom" constant="54" id="cag-6b-gut"/>
                             <constraint firstItem="6XM-cX-MPr" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leadingMargin" constant="-8" id="eNT-w9-pVB"/>
                             <constraint firstItem="ElH-ax-y7x" firstAttribute="leading" secondItem="bpT-Qc-HL3" secondAttribute="leading" constant="238" id="k8m-q0-rnc"/>
