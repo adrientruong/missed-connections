@@ -48,6 +48,15 @@
              NSLog(@"Error %@", error);
          }
      }];
+    
+    UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(closeView)];
+    swipeGesture.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeGesture];
+}
+
+- (void) closeView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Swipeable view datasource
@@ -64,19 +73,15 @@
 
 - (UIView *) nextViewForSwipeableView:(ZLSwipeableView *)swipeableView
 {
-    NSLog(@"Calling tinder method");
+    NSLog(@"Calling tinder method %li %lu", (long)self.currentProfileIndex, (unsigned long)self.userDetailsArray.count);
     if(self.currentProfileIndex < self.userDetailsArray.count)
     {
-        NSLog(@"Setting card view details");
         CardView *cardView = [[NSBundle mainBundle] loadNibNamed:@"CardView" owner:self options:nil][0];
-        [cardView setUserProfile:[self.userDetailsArray objectAtIndex:self.currentProfileIndex]];
+        [cardView populateCardWithProfile:[self.userDetailsArray objectAtIndex:self.currentProfileIndex]];
         self.currentProfileIndex ++;
         return cardView;
     }
-    else
-    {
-        return nil;
-    }
+    return nil;
 }
 
 - (void)didReceiveMemoryWarning {
