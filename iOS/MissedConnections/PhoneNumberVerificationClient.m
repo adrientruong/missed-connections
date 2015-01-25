@@ -42,9 +42,17 @@
 
 - (void)verify
 {
+    if (self.didVerify) {
+        return;
+    }
+    
     NSDictionary *parameters = @{@"vc": self.identifier};
     
     [self GET:@"get" parameters:parameters success:^(NSURLSessionDataTask *task, id response) {
+        if (self.didVerify) {
+            return;
+        }
+        
         BOOL verified = [response[@"verified"] boolValue];
         NSString *phoneNumber = response[@"number"];
         
