@@ -180,6 +180,19 @@
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+    PFUser *otherUser = contactRequest[@"fromUser"];
+    if ([otherUser.objectId isEqualToString:[PFUser currentUser].objectId]) {
+        otherUser = contactRequest[@"toUser"];
+    }
+
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"owner" equalTo:otherUser[@"fbid"]];
+    
+    NSString *message = [NSString stringWithFormat:@"%@ has accepted your contact request.", [PFUser currentUser][@"name"]];
+    // Send push notification to query
+    [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                   withMessage:message];
 }
 
 - (void)rejectButtonTapped:(UIButton *)button
