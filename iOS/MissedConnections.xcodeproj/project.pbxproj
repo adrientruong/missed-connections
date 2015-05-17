@@ -35,7 +35,7 @@
 		03C554341A74867100BF76EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554331A74867100BF76EE /* CoreGraphics.framework */; };
 		03C554361A7486B600BF76EE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554351A7486B600BF76EE /* libz.dylib */; };
 		03C554381A7486CD00BF76EE /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C554371A7486CD00BF76EE /* libsqlite3.dylib */; };
-		45DDA3E7CFBC558341E181B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245A7751DC6CB688E2269A6E /* libPods.a */; };
+		45DDA3E7CFBC558341E181B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 245A7751DC6CB688E2269A6E /* libPods.a */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7A014E461A74DF740012FADA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A014E451A74DF740012FADA /* Main.storyboard */; };
 		7A014E491A7518540012FADA /* ContactRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A014E481A7518540012FADA /* ContactRequestsViewController.m */; };
 		7A014E521A755D5B0012FADA /* ContactRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A014E501A755D5B0012FADA /* ContactRequestTableViewCell.m */; };
@@ -490,6 +490,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -498,6 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
 			};
 			name = Debug;
 		};
@@ -509,6 +512,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -517,6 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = NO;
 			};
 			name = Release;
 		};
